@@ -150,8 +150,10 @@ public class playerMovement : MonoBehaviour
     private void ApplyDamage(Collider2D enemy)
     {
         EnemyBase enemyScript = enemy.GetComponent<EnemyBase>();
+
         if (enemyScript != null)
         {
+            
             // 1. حساب الدم والدفع
             Vector2 knockbackDir = (enemy.transform.position - transform.position).normalized;
             enemyScript.TakeDamage(damage, knockbackDir, knockbackForce);
