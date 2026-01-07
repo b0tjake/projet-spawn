@@ -230,7 +230,11 @@ Canvas:
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
   m_VertexColorAlwaysGammaSpace: 0
+<<<<<<< HEAD
   m_AdditionalShaderChannelsFlag: 25
+=======
+  m_AdditionalShaderChannelsFlag: 0
+>>>>>>> d62c46c389fcc1e4700ec8c3793466650794ab43
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
   m_SortingOrder: 0
@@ -400,6 +404,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+<<<<<<< HEAD
 --- !u!1 &88860926
 GameObject:
   m_ObjectHideFlags: 0
@@ -432,6 +437,8 @@ Transform:
   - {fileID: 222567958}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+=======
+>>>>>>> d62c46c389fcc1e4700ec8c3793466650794ab43
 --- !u!1 &91690178
 GameObject:
   m_ObjectHideFlags: 0
@@ -783,6 +790,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1582354896}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+<<<<<<< HEAD
 --- !u!1 &222567957
 GameObject:
   m_ObjectHideFlags: 0
@@ -885,6 +893,8 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
+=======
+>>>>>>> d62c46c389fcc1e4700ec8c3793466650794ab43
 --- !u!1 &270559396
 GameObject:
   m_ObjectHideFlags: 0
@@ -1583,6 +1593,7 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 407917457}
   m_CullTransparentMesh: 1
+<<<<<<< HEAD
 --- !u!1 &469967240
 GameObject:
   m_ObjectHideFlags: 0
@@ -1704,6 +1715,8 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 469967240}
   m_CullTransparentMesh: 1
+=======
+>>>>>>> d62c46c389fcc1e4700ec8c3793466650794ab43
 --- !u!1 &478778025
 GameObject:
   m_ObjectHideFlags: 0
@@ -3100,6 +3113,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 270559400}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+<<<<<<< HEAD
 --- !u!1 &1187262261
 GameObject:
   m_ObjectHideFlags: 0
@@ -3236,6 +3250,8 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1187262261}
   m_CullTransparentMesh: 1
+=======
+>>>>>>> d62c46c389fcc1e4700ec8c3793466650794ab43
 --- !u!1 &1216451903
 GameObject:
   m_ObjectHideFlags: 0
@@ -5277,4 +5293,7 @@ SceneRoots:
   - {fileID: 96761951}
   - {fileID: 1527869927}
   - {fileID: 2067872450}
+<<<<<<< HEAD
   - {fileID: 88860927}
+=======
+>>>>>>> d62c46c389fcc1e4700ec8c3793466650794ab43

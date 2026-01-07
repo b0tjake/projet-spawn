@@ -1,5 +1,10 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/Scenes/ControlsScene.unity.meta
 guid: 08a38c2eeff95274da7ff05d7e287494
+========
+guid: 2bbd4ead48e2f42449ce5a96892fdd21
+folderAsset: yes
+>>>>>>>> d62c46c389fcc1e4700ec8c3793466650794ab43:Assets/Scripts/Thug_enemy.meta
 DefaultImporter:
   externalObjects: {}
   userData: 

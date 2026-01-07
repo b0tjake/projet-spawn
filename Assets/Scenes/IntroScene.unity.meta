@@ -1,5 +1,10 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/Scenes/IntroScene.unity.meta
 guid: 8c9bc7a12042b8f479f8b0af996c6b8a
+========
+guid: 75b73f393d9e9574da9b98d7ed6dca4d
+folderAsset: yes
+>>>>>>>> d62c46c389fcc1e4700ec8c3793466650794ab43:Assets/Scripts/player.meta
 DefaultImporter:
   externalObjects: {}
   userData: 
