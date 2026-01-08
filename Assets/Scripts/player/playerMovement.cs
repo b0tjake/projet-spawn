@@ -132,6 +132,12 @@ IEnumerator performFlyingKick()
 
     if (playerAttackBox != null)
         playerAttackBox.SetActive(true);
+        
+        Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, enemyLayers);
+        foreach (Collider2D enemy in hitEnemies)
+        {
+            ApplyDamage(enemy);
+        }
 
     // IMPORTANT — use realtime so HitStop doesn't shrink duration
     yield return new WaitForSecondsRealtime(flyKickDuration);
@@ -290,4 +296,6 @@ private void stopFlyingKick()
         Gizmos.DrawWireSphere(attackPoint.position, attackRange);
     }
     #endregion
+
+
 }

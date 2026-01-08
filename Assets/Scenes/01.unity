@@ -3075,8 +3075,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -1.8720753, y: 0}
-  m_SizeDelta: {x: 805.9, y: 350}
+  m_AnchoredPosition: {x: 0, y: 17.09}
+  m_SizeDelta: {x: 519.06, y: 225.43}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &823683953
 MonoBehaviour:
@@ -4818,7 +4818,7 @@ MonoBehaviour:
   playerLayer:
     serializedVersion: 2
     m_Bits: 128
-  damage: -10
+  damage: 0
 --- !u!4 &1626526840
 Transform:
   m_ObjectHideFlags: 0
