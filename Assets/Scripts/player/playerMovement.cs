@@ -9,6 +9,7 @@ public class playerMovement : MonoBehaviour
     public float attackRange = 1.53f;
     public LayerMask enemyLayers;
     public float damage = 20f;
+
     public float attackRate = 0.24f;
     public float knockbackForce = 5f;
     public float comboDelay = 1.0f;
@@ -20,6 +21,7 @@ public class playerMovement : MonoBehaviour
     [Header("Movement Settings")]
     public float speed = 5f;
     public float jumpForce = 5f;
+    private Coroutine jumpCoroutine;
     [SerializeField] private GameObject playerAttackBox;
     #endregion
 
@@ -63,6 +65,15 @@ public class playerMovement : MonoBehaviour
     {
         HandleCooldowns();
         HandleInput();
+
+        if(isFlyKicking) return;
+
+        if (!grounded && rb.gravityScale == defaultGravityScale) 
+        {
+            anim.SetBool("jump", true);
+        }
+        // إلا كنا في الأرض، نحيدو Jump
+        if (grounded) anim.SetBool("jump", false);
     }
     #endregion
 
@@ -80,29 +91,31 @@ public class playerMovement : MonoBehaviour
         if (move != 0) Flip(move);
 
         // 3. Jump
-        if (Input.GetKeyDown(KeyCode.W) && grounded) Jump();
+        if (Input.GetKeyDown(KeyCode.W) && grounded) {
+            jumpCoroutine = StartCoroutine(Jump());
+        }
 
         // 4. Attack
         if (Time.time >= nextAttackTime)
         {
-            if (Input.GetKeyDown(KeyCode.K)) Attack("kickAttack");
-            else if (Input.GetKeyDown(KeyCode.J)) Attack("attack");
+            if (Input.GetKeyDown(KeyCode.K) && grounded) Attack("kickAttack");
+            else if (Input.GetKeyDown(KeyCode.J) && grounded) Attack("attack");
         }
 
         if(!grounded && Input.GetKeyDown(KeyCode.K))
         {
 
-            StartCoroutine(performFlyingKick());
+          StartCoroutine(performFlyingKick());
         }
         
 
         // Update Animations
         anim.SetBool("moving", move != 0);
-        anim.SetBool("jump", !grounded);
     }
 IEnumerator performFlyingKick()
 {
     isFlyKicking = true;
+    grounded = true;
 
     // Force animation state
     anim.SetBool("flyKick", true);
@@ -119,6 +132,12 @@ IEnumerator performFlyingKick()
 
     if (playerAttackBox != null)
         playerAttackBox.SetActive(true);
+        
+        Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, enemyLayers);
+        foreach (Collider2D enemy in hitEnemies)
+        {
+            ApplyDamage(enemy);
+        }
 
     // IMPORTANT — use realtime so HitStop doesn't shrink duration
     yield return new WaitForSecondsRealtime(flyKickDuration);
@@ -130,6 +149,7 @@ private void stopFlyingKick()
     if (!isFlyKicking) return;
 
     isFlyKicking = false;
+    grounded = false;
 
     anim.SetBool("flyKick", false);
 
@@ -157,10 +177,16 @@ private void stopFlyingKick()
         rb.linearVelocity = new Vector2(dir * speed, rb.linearVelocity.y);
     }
 
-    private void Jump()
+    IEnumerator Jump()
     {
         rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpForce);
-        grounded = false;
+        grounded = false; 
+        yield return new WaitForSeconds(1f);
+        if(grounded) yield break;
+        rb.gravityScale = 0.5f;
+        anim.SetBool("jump", false);
+        anim.SetBool("glide", true);
+
     }
 
     private void Flip(float dir)
@@ -253,6 +279,14 @@ private void stopFlyingKick()
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Ground")) grounded = true;
+        rb.gravityScale = defaultGravityScale;
+        anim.SetBool("glide", false);
+        anim.SetBool("jump", false);
+
+        if(jumpCoroutine != null)
+        {
+            StopCoroutine(jumpCoroutine);
+        }
     }
 
     private void OnDrawGizmosSelected()
@@ -262,4 +296,6 @@ private void stopFlyingKick()
         Gizmos.DrawWireSphere(attackPoint.position, attackRange);
     }
     #endregion
+
+
 }
