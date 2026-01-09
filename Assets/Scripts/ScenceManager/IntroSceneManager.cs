@@ -33,7 +33,7 @@ public class IntroSceneManager : MonoBehaviour
 
     void LoadGameScene()
     {
-        // كيدوزك لـ Scene ديال اللعب اللي سميتها "0" أو "Game"
-        SceneManager.LoadScene("0"); 
+        // كيدوزك لـ Scene ديال اللعب اللي سميتها "01" أو "Game"
+        SceneManager.LoadScene("01"); 
     }
 }

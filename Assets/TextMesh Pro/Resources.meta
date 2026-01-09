@@ -1,9 +1,13 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
 <<<<<<<< HEAD:Assets/TextMesh Pro/Resources.meta
 guid: 243e06394e614e5d99fab26083b707fa
 ========
 guid: 75b083c2dd4c8b74da7368e22d1afc44
 >>>>>>>> d62c46c389fcc1e4700ec8c3793466650794ab43:Assets/Scripts.meta
+=======
+guid: 243e06394e614e5d99fab26083b707fa
+>>>>>>> origin/zouhair
 folderAsset: yes
 DefaultImporter:
   externalObjects: {}

@@ -5,7 +5,7 @@ public class ThugEnemy : EnemyBase
     [Header("Combat Settings")]
     [SerializeField] private float timeBetweenAttacks = 2f;
     [SerializeField] private Transform attackPoint;
-    [SerializeField] private float attackRadius = 0.5f;
+    [SerializeField] private float attackRadius = 10f;
     [SerializeField] private LayerMask playerLayer;
     [SerializeField] private float damage = 10f;
 

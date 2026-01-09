@@ -6,7 +6,7 @@ public class playerMovement : MonoBehaviour
     #region Variables - Settings
     [Header("Combat Settings")]
     public Transform attackPoint;
-    public float attackRange = 0.5f;
+    public float attackRange = 1.53f;
     public LayerMask enemyLayers;
     public float damage = 20f;
     public float attackRate = 0.24f;
@@ -35,6 +35,15 @@ public class playerMovement : MonoBehaviour
     private float comboTimer = 0f;
     private float nextAttackTime = 0f;
     #endregion
+    
+    
+    #region fly kick settings
+    private float flyKickSpeed = 7f;
+    private float flyKickDuration = 0.5f;
+    private bool isFlyKicking = false;
+    private float defaultGravityScale;
+
+    #endregion
 
     #region Unity Callbacks
     void Start()
@@ -45,6 +54,7 @@ public class playerMovement : MonoBehaviour
         
         originalScaleX = transform.localScale.x;
         originalScaleY = transform.localScale.y;
+        defaultGravityScale = rb.gravityScale;
         
         if (playerAttackBox != null) playerAttackBox.SetActive(false);
     }
@@ -59,6 +69,7 @@ public class playerMovement : MonoBehaviour
     #region Input & Logic Handling
     private void HandleInput()
     {
+        if(isFlyKicking) return;
         // 1. Crouch Logic
         isCrouching = Input.GetKey(KeyCode.S);
         anim.SetBool("crouching", isCrouching);
@@ -78,10 +89,60 @@ public class playerMovement : MonoBehaviour
             else if (Input.GetKeyDown(KeyCode.J)) Attack("attack");
         }
 
+        if(!grounded && Input.GetKeyDown(KeyCode.K))
+        {
+
+            StartCoroutine(performFlyingKick());
+        }
+        
+
         // Update Animations
         anim.SetBool("moving", move != 0);
         anim.SetBool("jump", !grounded);
     }
+IEnumerator performFlyingKick()
+{
+    isFlyKicking = true;
+
+    // Force animation state
+    anim.SetBool("flyKick", true);
+    anim.SetBool("jump", false);
+    anim.SetBool("moving", false);
+    anim.SetBool("crouching", false);
+
+    rb.gravityScale = 0;
+    rb.linearVelocity = Vector2.zero;
+
+    float direction = transform.localScale.x > 0 ? 1 : -1;
+    rb.linearVelocity = new Vector2(direction * flyKickSpeed, -2);
+    attackRange = 2.3f; 
+
+    if (playerAttackBox != null)
+        playerAttackBox.SetActive(true);
+
+    // IMPORTANT — use realtime so HitStop doesn't shrink duration
+    yield return new WaitForSecondsRealtime(flyKickDuration);
+
+    stopFlyingKick();
+}
+private void stopFlyingKick()
+{
+    if (!isFlyKicking) return;
+
+    isFlyKicking = false;
+
+    anim.SetBool("flyKick", false);
+
+    rb.gravityScale = defaultGravityScale;
+    attackRange = 1.53f;
+
+    // give a small fall push
+    rb.linearVelocity = new Vector2(0, -2f);
+
+    if (playerAttackBox != null)
+        playerAttackBox.SetActive(false);
+}
+
 
     private void HandleCooldowns()
     {
@@ -150,8 +211,10 @@ public class playerMovement : MonoBehaviour
     private void ApplyDamage(Collider2D enemy)
     {
         EnemyBase enemyScript = enemy.GetComponent<EnemyBase>();
+
         if (enemyScript != null)
         {
+            
             // 1. حساب الدم والدفع
             Vector2 knockbackDir = (enemy.transform.position - transform.position).normalized;
             enemyScript.TakeDamage(damage, knockbackDir, knockbackForce);
