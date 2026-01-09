@@ -9,6 +9,7 @@ public class playerMovement : MonoBehaviour
     public float attackRange = 1.53f;
     public LayerMask enemyLayers;
     public float damage = 20f;
+    public float stuneDuration = 0.5f;
 
     public float attackRate = 0.24f;
     public float knockbackForce = 5f;
@@ -131,13 +132,17 @@ IEnumerator performFlyingKick()
     attackRange = 2.3f; 
 
     if (playerAttackBox != null)
-        playerAttackBox.SetActive(true);
-        
-        Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, enemyLayers);
+        {
+            Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, enemyLayers);
+
         foreach (Collider2D enemy in hitEnemies)
         {
-            ApplyDamage(enemy);
+
+            StartCoroutine(ApplyDamage(enemy));
         }
+        playerAttackBox.SetActive(true);
+        }
+        
 
     // IMPORTANT — use realtime so HitStop doesn't shrink duration
     yield return new WaitForSecondsRealtime(flyKickDuration);
@@ -205,7 +210,8 @@ private void stopFlyingKick()
 
         foreach (Collider2D enemy in hitEnemies)
         {
-            ApplyDamage(enemy);
+
+            StartCoroutine(ApplyDamage(enemy));
         }
 
         // 3. Post-Attack Timer
@@ -213,6 +219,8 @@ private void stopFlyingKick()
         StopCoroutine("DisableHitbox");
         StartCoroutine(DisableHitbox());
     }
+
+
     #endregion
 
     #region Combat Helpers
@@ -234,7 +242,7 @@ private void stopFlyingKick()
         }
     }
 
-    private void ApplyDamage(Collider2D enemy)
+     IEnumerator ApplyDamage(Collider2D enemy)
     {
         EnemyBase enemyScript = enemy.GetComponent<EnemyBase>();
 
@@ -243,7 +251,7 @@ private void stopFlyingKick()
             
             // 1. حساب الدم والدفع
             Vector2 knockbackDir = (enemy.transform.position - transform.position).normalized;
-            enemyScript.TakeDamage(damage, knockbackDir, knockbackForce);
+            enemyScript.TakeDamage(damage, knockbackDir, stuneDuration);
 
             // 2. تفعيل الصوت (مع شوية تنويع فـ Pitch باش ما يملش اللاعب)
             if (audioSource != null && hitSound != null)
@@ -257,6 +265,9 @@ private void stopFlyingKick()
             if (CameraShake.instance != null) CameraShake.instance.Shake(0.05f, 0.2f);
             
             Debug.Log($"Hit: {enemy.name}");
+
+            yield return new WaitForSeconds(0.1f);
+
         }
     }
     #endregion
@@ -265,8 +276,16 @@ private void stopFlyingKick()
     IEnumerator DisableHitbox()
     {
         if (playerAttackBox != null) playerAttackBox.SetActive(true);
+        if (!isFlyKicking)
+        {
         yield return new WaitForSeconds(0.2f);
         if (playerAttackBox != null) playerAttackBox.SetActive(false);
+        }
+        else
+        {
+            yield return new WaitForSeconds(flyKickDuration);
+            if (playerAttackBox != null) playerAttackBox.SetActive(false);
+        }
     }
 
     IEnumerator HitStop(float duration)
@@ -298,4 +317,28 @@ private void stopFlyingKick()
     #endregion
 
 
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        // الجاسوس رقم 1: هل لمسنا شيئاً أصلاً؟
+        Debug.Log("🔥 Touch! Something entered the trigger: " + other.name);
+
+        if (isFlyKicking)
+        {
+            // الجاسوس رقم 2: هل نحن في حالة طيران؟
+            Debug.Log("✈️ Checking if object is enemy...");
+
+            // التحقق من الطبقة أو التاج
+            if (((1 << other.gameObject.layer) & enemyLayers) != 0 || other.CompareTag("Enemy"))
+            {
+                // الجاسوس رقم 3: نعم، إنه عدو!
+                Debug.Log("⚔️ Enemy Found! Dealing Damage to: " + other.name);
+                
+                StartCoroutine(ApplyDamage(other));
+            }
+            else
+            {
+                Debug.Log("❌ Object is NOT an enemy. Tag: " + other.tag + " | Layer: " + other.gameObject.layer);
+            }
+        }
+    }
 }
