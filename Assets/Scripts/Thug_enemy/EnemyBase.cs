@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 public class EnemyBase : MonoBehaviour
@@ -10,6 +11,7 @@ public class EnemyBase : MonoBehaviour
 
     protected Transform player;
     protected float currentHealth;
+    protected bool isStuned = false;
     protected bool isDead = false;
     protected Animator anim; 
 
@@ -32,6 +34,7 @@ public class EnemyBase : MonoBehaviour
 
     protected virtual void Update()
     {
+        if(isStuned) return;
         if (player == null) 
         {
             GameObject playerObj = GameObject.FindGameObjectWithTag("Player");
@@ -53,7 +56,7 @@ public class EnemyBase : MonoBehaviour
     protected virtual void HandleStates() { }
 
     // الدالة الرئيسية اللي كيعيط ليها اللاعب (فيها 3 ديال المتغيرات)
-    public virtual void TakeDamage(float damageAmount, Vector2 knockbackDirection, float knockbackForce)
+    public virtual void TakeDamage(float damageAmount, Vector2 knockbackDirection, float stuneDuration)
     {
         if (isDead) return;
 
@@ -65,14 +68,30 @@ public class EnemyBase : MonoBehaviour
 
         // 2. تطبيق الـ Knockback
         Rigidbody2D rb = GetComponent<Rigidbody2D>();
-        if (rb != null && knockbackForce > 0)
+        // if (rb != null && knockbackForce > 0)
+        // {
+        //     // كنمسحو السرعة القديمة باش الدفع يبان نقي
+        //     rb.linearVelocity = Vector2.zero; 
+        //     rb.AddForce(knockbackDirection * knockbackForce, ForceMode2D.Impulse);
+        // }
+
+
+        if (gameObject.activeInHierarchy)
         {
-            // كنمسحو السرعة القديمة باش الدفع يبان نقي
-            rb.linearVelocity = Vector2.zero; 
-            rb.AddForce(knockbackDirection * knockbackForce, ForceMode2D.Impulse);
+            StopCoroutine("StuneCoroutine");
+            StartCoroutine(StuneCoroutine(stuneDuration));
         }
 
         if (currentHealth <= 0) Die();
+
+        
+    }
+
+    IEnumerator StuneCoroutine(float duration)
+    {
+        isStuned = true;
+        yield return new WaitForSeconds(duration);
+        isStuned = false;
     }
 
     // هادي دالة إضافية (Overload) باش إلا بغيتي تنقص ليه الدم بلا دفع (مثلا بسم أو نار)
@@ -86,7 +105,7 @@ public class EnemyBase : MonoBehaviour
         if (isDead) return;
         isDead = true;
 
-        if (anim != null) anim.Play("Thug_Die", -1, 0f); 
+         anim.SetTrigger("Thug_Die"); 
 
         Collider2D col = GetComponent<Collider2D>();
         if (col != null) col.enabled = false;
