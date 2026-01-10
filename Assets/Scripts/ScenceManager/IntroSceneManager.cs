@@ -21,19 +21,14 @@ public class IntroSceneManager : MonoBehaviour
         pressAnyKeyText.SetActive(true);
         canStart = true;
     }
-
+    
     void Update()
     {
-        // إلا سالات الأنميشن واللاعب ورك على أي بوطون فـ الكلافي أو المانيطا
-        if (canStart && Input.anyKeyDown)
+        // فاش اللاعب يضغط على أي زر
+        if (Input.anyKeyDown) 
         {
-            LoadGameScene();
+            // ديه للقائمة الرئيسية (MainMenu) اللي رقمها 1
+            SceneManager.LoadScene(1); 
         }
-    }
-
-    void LoadGameScene()
-    {
-        // كيدوزك لـ Scene ديال اللعب اللي سميتها "01" أو "Game"
-        SceneManager.LoadScene("01"); 
     }
 }
