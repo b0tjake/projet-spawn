@@ -11,7 +11,7 @@ public class EnemyBase : MonoBehaviour
 
     protected Transform player;
     protected float currentHealth;
-    private bool isStuned = false;
+    protected bool isStuned = false;
     protected bool isDead = false;
     protected Animator anim; 
 
