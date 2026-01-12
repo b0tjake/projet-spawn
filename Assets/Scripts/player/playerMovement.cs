@@ -103,7 +103,7 @@ public class playerMovement : MonoBehaviour
             else if (Input.GetKeyDown(KeyCode.J) && grounded) Attack("attack");
         }
 
-        if(!grounded && Input.GetKeyDown(KeyCode.K))
+        if(!grounded && !isFlyKicking && Input.GetKeyDown(KeyCode.K))
         {
 
           StartCoroutine(performFlyingKick());
@@ -154,9 +154,10 @@ private void stopFlyingKick()
     if (!isFlyKicking) return;
 
     isFlyKicking = false;
-    grounded = false;
+    // grounded = false;
 
     anim.SetBool("flyKick", false);
+    anim.SetBool("glide", true);
 
     rb.gravityScale = defaultGravityScale;
     attackRange = 1.53f;
