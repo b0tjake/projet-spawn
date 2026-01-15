@@ -1,5 +1,6 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class playerMovement : MonoBehaviour
 {
@@ -33,6 +34,7 @@ public class playerMovement : MonoBehaviour
     private float originalScaleY;
     private bool grounded = false;
     private bool isCrouching = false;
+    private bool isSpecialAttacking = false;
     
     private int comboStep = 0;
     private float comboTimer = 0f;
@@ -47,6 +49,12 @@ public class playerMovement : MonoBehaviour
     private float defaultGravityScale;
 
     #endregion
+
+    private float rageValue = 0f;
+
+[Header("Rage UI")]
+public Image[] rageSkulls;
+public float maxRage = 4.0f;
 
     #region Unity Callbacks
     void Start()
@@ -108,7 +116,11 @@ public class playerMovement : MonoBehaviour
 
           StartCoroutine(performFlyingKick());
         }
-        
+        //special attack 1
+        if(Input.GetKeyDown(KeyCode.O) && rageValue >= 1.0f)
+        {
+            StartCoroutine(SpecialAttackInput());
+        }
 
         // Update Animations
         anim.SetBool("moving", move != 0);
@@ -243,6 +255,7 @@ private void stopFlyingKick()
         }
     }
 
+        
      IEnumerator ApplyDamage(Collider2D enemy)
     {
         EnemyBase enemyScript = enemy.GetComponent<EnemyBase>();
@@ -272,6 +285,85 @@ private void stopFlyingKick()
         }
     }
     #endregion
+
+    public void IncreaseRage(float amount)
+    {
+        rageValue += amount;
+        rageValue = Mathf.Clamp(rageValue, 0f, maxRage);
+        UpdateRageUI();
+        Debug.Log($"Rage increased by {amount}. Current Rage: {rageValue}");
+    }
+private void UpdateRageUI()
+{
+    // 1. Calculate our current "Step" index
+    // 0.25 -> index 0 | 1.0 -> index 3 | 1.25 -> index 4, etc.
+    int currentIndex = Mathf.FloorToInt(rageValue / 0.25f) - 1;
+
+    for (int i = 0; i < rageSkulls.Length; i++)
+    {
+        // A: Is this a "Full Skull" milestone? (Indices 3, 7, 11, 15)
+        bool isMilestone = (i + 1) % 4 == 0;
+        
+        // B: Have we passed this milestone?
+        float milestoneValue = (i + 1) * 0.25f;
+        bool milestoneComplete = rageValue >= milestoneValue;
+
+        // LOGIC:
+        // Show the image if:
+        // - It is EXACTLY the current progress (currentIndex)
+        // - OR it is a Milestone skull that we have already finished
+        if (i == currentIndex || (isMilestone && milestoneComplete))
+        {
+            rageSkulls[i].enabled = true;
+        }
+        else
+        {
+            rageSkulls[i].enabled = false;
+        }
+    }
+}        
+    #region special Attacks;
+    IEnumerator SpecialAttackInput(){
+        {
+            isSpecialAttacking = true;
+            anim.SetBool("spAttack", true); 
+            anim.SetBool("specialAttack1", true);            
+            // damage = 50f;
+
+            // Reduce rage
+            IncreaseRage(-1.0f);
+            yield return new WaitForSeconds(1.0f);
+            anim.SetBool("spAttack", false);
+                anim.SetBool("specialAttack1", false);            
+    // damage = 20f;
+        }
+    }
+    
+
+public void ExecuteBombExplosionHit()
+{
+    if (CameraShake.instance != null) CameraShake.instance.Shake(0.15f, 0.4f);
+    
+
+    float explosionRadius = 5f; 
+    float explosionDamage = 50f;
+
+    Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(transform.position, explosionRadius, enemyLayers);
+
+    foreach (Collider2D enemy in hitEnemies)
+    {
+        EnemyBase enemyScript = enemy.GetComponent<EnemyBase>();
+        if (enemyScript != null)
+        {
+            Vector2 knockbackDir = (enemy.transform.position - transform.position).normalized;
+            enemyScript.TakeDamage(explosionDamage, knockbackDir, 1.0f);
+        }
+    }
+    
+    Debug.Log("Special Attack Explosion Triggered!");
+}
+    #endregion
+    
 
     #region Coroutines & Gizmos
     IEnumerator DisableHitbox()
@@ -338,7 +430,7 @@ private void stopFlyingKick()
             }
             else
             {
-                Debug.Log("❌ Object is NOT an enemy. Tag: " + other.tag + " | Layer: " + other.gameObject.layer);
+                Debug.Log("Object is NOT an enemy. Tag: " + other.tag + " | Layer: " + other.gameObject.layer);
             }
         }
     }

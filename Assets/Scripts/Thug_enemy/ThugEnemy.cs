@@ -8,6 +8,7 @@ public class ThugEnemy : EnemyBase
     [SerializeField] private float attackRadius = 10f;
     [SerializeField] private LayerMask playerLayer;
     [SerializeField] private float damage = 10f;
+    
 
     private float attackCooldown = 0f;
 

@@ -8,6 +8,7 @@ public class EnemyBase : MonoBehaviour
     [SerializeField] protected float moveSpeed = 3f;
     [SerializeField] protected float detectionRange = 5f;
     [SerializeField] protected float attackRange = 1.5f;
+    protected float rageGivenOnDeath = 0.25f;
 
     protected Transform player;
     protected float currentHealth;
@@ -104,6 +105,7 @@ public class EnemyBase : MonoBehaviour
     {
         if (isDead) return;
         isDead = true;
+        isEnnemyDead();
 
          anim.SetTrigger("Thug_Die"); 
 
@@ -117,5 +119,19 @@ public class EnemyBase : MonoBehaviour
 
         this.enabled = false; 
         Destroy(gameObject, 4f);
+    }
+    protected virtual void isEnnemyDead()
+    {
+        
+        // زيادة الغضب ديال اللاعب
+        GameObject playerObj = GameObject.FindGameObjectWithTag("Player");
+        if (playerObj != null)
+        {
+            playerMovement playerMovementScript = playerObj.GetComponent<playerMovement>();
+            if (playerMovementScript != null)
+            {
+                playerMovementScript.IncreaseRage(rageGivenOnDeath);
+            }
+        }   
     }
 }
