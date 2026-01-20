@@ -332,7 +332,7 @@ private void UpdateRageUI()
 
             // Reduce rage
             IncreaseRage(-1.0f);
-            yield return new WaitForSeconds(1.0f);
+            yield return new WaitForSeconds(4.0f);
             anim.SetBool("spAttack", false);
                 anim.SetBool("specialAttack1", false);            
     // damage = 20f;

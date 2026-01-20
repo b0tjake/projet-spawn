@@ -341,6 +341,7 @@ MonoBehaviour:
   moveSpeed: 2
   detectionRange: 5.7
   attackRange: 2.81
+  rageGivenOnDeath: 0.25
   healthBar: {fileID: 1932587975}
   timeBetweenAttacks: 1
   attackPoint: {fileID: 979324573}
@@ -2695,6 +2696,7 @@ MonoBehaviour:
   moveSpeed: 2
   detectionRange: 5.7
   attackRange: 2.81
+  rageGivenOnDeath: 0.25
   healthBar: {fileID: 1757402571}
   timeBetweenAttacks: 1
   attackPoint: {fileID: 1762303910}
@@ -4862,6 +4864,7 @@ MonoBehaviour:
   moveSpeed: 2
   detectionRange: 5.7
   attackRange: 2.81
+  rageGivenOnDeath: 0.25
   healthBar: {fileID: 1393087508}
   timeBetweenAttacks: 1
   attackPoint: {fileID: 1049157774}
@@ -6131,6 +6134,7 @@ MonoBehaviour:
   moveSpeed: 2
   detectionRange: 5.7
   attackRange: 2.81
+  rageGivenOnDeath: 0.25
   healthBar: {fileID: 1814974165}
   timeBetweenAttacks: 1
   attackPoint: {fileID: 434907161}
@@ -6729,6 +6733,7 @@ MonoBehaviour:
   moveSpeed: 2
   detectionRange: 5.7
   attackRange: 2.81
+  rageGivenOnDeath: 0.25
   healthBar: {fileID: 1823824763}
   timeBetweenAttacks: 1
   attackPoint: {fileID: 6446071}
@@ -6959,6 +6964,7 @@ MonoBehaviour:
   moveSpeed: 2
   detectionRange: 5.7
   attackRange: 2.81
+  rageGivenOnDeath: 0.25
   healthBar: {fileID: 1585092406}
   timeBetweenAttacks: 1
   attackPoint: {fileID: 267686392}
@@ -7189,6 +7195,7 @@ MonoBehaviour:
   moveSpeed: 2
   detectionRange: 5.7
   attackRange: 2.81
+  rageGivenOnDeath: 0.25
   healthBar: {fileID: 1440550269}
   timeBetweenAttacks: 1
   attackPoint: {fileID: 899953630}
@@ -8294,6 +8301,7 @@ MonoBehaviour:
   moveSpeed: 2
   detectionRange: 5.7
   attackRange: 2.81
+  rageGivenOnDeath: 0.25
   healthBar: {fileID: 134089446}
   timeBetweenAttacks: 1
   attackPoint: {fileID: 1671149533}
@@ -12169,6 +12177,7 @@ MonoBehaviour:
   moveSpeed: 3
   detectionRange: 5
   attackRange: 2.8
+  rageGivenOnDeath: 0.25
   healthBar: {fileID: 1446091978}
   bossHealthBar: {fileID: 0}
   attackPoint: {fileID: 2030763414}
