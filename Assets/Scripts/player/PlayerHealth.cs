@@ -60,6 +60,12 @@ public class PlayerHealth : MonoBehaviour
             return; 
         }
 
+        if (movementScript != null && movementScript.isSpecialAttacking)
+    {
+        Debug.Log("Immune during Special Attack!");
+        return;
+    }
+
         currentHealth -= damageAmount;
         // Debug.Log("Damage received: " + damageAmount);
 

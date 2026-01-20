@@ -34,7 +34,7 @@ public class playerMovement : MonoBehaviour
     private float originalScaleY;
     private bool grounded = false;
     private bool isCrouching = false;
-    private bool isSpecialAttacking = false;
+    public bool isSpecialAttacking = false;
     
     private int comboStep = 0;
     private float comboTimer = 0f;
@@ -49,6 +49,14 @@ public class playerMovement : MonoBehaviour
     private float defaultGravityScale;
 
     #endregion
+    [Header("Gun Attack")]
+public GameObject bulletPrefab;
+public Transform firePoint;
+public float bulletSpeed = 15f;
+
+[Header("Gun Burst Settings")]
+public int burstCount = 7;        
+public float timeBetweenShots = 0.1f;
 
     private float rageValue = 0f;
 
@@ -121,10 +129,55 @@ public float maxRage = 4.0f;
         {
             StartCoroutine(SpecialAttackInput());
         }
+        //special attack 2 (gun)
+        if(Input.GetKeyDown(KeyCode.L) && rageValue >= 1.0f)
+        {
+            StartCoroutine(GunSpecialAttack());
+        }
 
         // Update Animations
         anim.SetBool("moving", move != 0);
     }
+
+IEnumerator GunSpecialAttack()
+{
+    isSpecialAttacking = true;
+    anim.SetBool("spAttack", true); 
+    
+    anim.Play("gunAttack"); 
+    IncreaseRage(-1.0f);
+
+
+    yield return new WaitForSeconds(0.5f); 
+
+    for (int i = 0; i < burstCount; i++)
+    {
+        ShootBullet(); 
+        
+        if (CameraShake.instance != null) CameraShake.instance.Shake(0.05f, 0.1f);
+        
+        yield return new WaitForSeconds(timeBetweenShots);
+    }
+
+    yield return new WaitForSeconds(0.3f); 
+
+    isSpecialAttacking = false;
+    anim.SetBool("spAttack", false);
+}
+public void ShootBullet()
+{
+    GameObject b = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
+    
+    float dir = transform.localScale.x > 0 ? 1 : -1;
+    
+    float spread = Random.Range(-0.5f, 0.5f); 
+    Vector2 velocity = new Vector2(dir * bulletSpeed, spread);
+
+    b.GetComponent<Rigidbody2D>().linearVelocity = velocity;
+    
+    if(dir < 0) b.transform.localScale = new Vector3(-1, 1, 1);
+}
+
 IEnumerator performFlyingKick()
 {
     isFlyKicking = true;
@@ -346,7 +399,7 @@ public void ExecuteBombExplosionHit()
     
 
     float explosionRadius = 5f; 
-    float explosionDamage = 50f;
+    float explosionDamage = 100f;
 
     Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(transform.position, explosionRadius, enemyLayers);
 
