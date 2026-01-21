@@ -141,24 +141,26 @@ public class BossController : EnemyBase
         yield return new WaitForSeconds(transformDuration);
     }
 
-    public void BossDealDamage()
+public void BossDealDamage()
+{
+    // If boss is hurt, stunned or dead → no damage
+    if (isDead || isStuned || takingDamage) return;
+
+    Collider2D[] hitPlayer =
+        Physics2D.OverlapCircleAll(attackPoint.position, attackRadius);
+
+    foreach (Collider2D target in hitPlayer)
     {
-        if (isDead) return;
-
-        Collider2D[] hitPlayer = Physics2D.OverlapCircleAll(attackPoint.position, attackRadius);
-        foreach (Collider2D target in hitPlayer)
+        if (target.CompareTag("Player"))
         {
-            if (target.CompareTag("Player"))
+            PlayerHealth healthScript = target.GetComponent<PlayerHealth>();
+            if (healthScript != null)
             {
-                PlayerHealth healthScript = target.GetComponent<PlayerHealth>();
-
-                if(healthScript != null) 
-                {
-                    healthScript.TakeDamage(bossDamage);
-                }
+                healthScript.TakeDamage(bossDamage);
             }
         }
     }
+}
 
     void OnDrawGizmosSelected()
     {
