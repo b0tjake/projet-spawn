@@ -12,37 +12,36 @@ public class ThugEnemy : EnemyBase
 
     private float attackCooldown = 0f;
 
-    protected override void HandleStates()
+protected override void HandleStates()
+{
+    // Stop everything if dead, stunned, or taking damage
+    if (isDead || isStuned || takingDamage) return;
+
+    float distanceToPlayer = Vector2.Distance(transform.position, player.position);
+    bool isMoving = false; 
+
+    switch (currentState)
     {
-        // 1. أول حاجة كنشوفو واش مات
-        if (isDead) return;
+        case EnemyState.Idle:
+            if (distanceToPlayer < detectionRange) currentState = EnemyState.Chase;
+            break;
 
-        // 2. كنحسبو المسافة مرة وحدة فقط
-        float distanceToPlayer = Vector2.Distance(transform.position, player.position);
-        bool isMoving = false; 
+        case EnemyState.Chase:
+            MoveTowardsPlayer();
+            isMoving = true;
+            if (distanceToPlayer <= attackRange) currentState = EnemyState.Attack;
+            else if (distanceToPlayer > detectionRange * 1.5f) currentState = EnemyState.Idle;
+            break;
 
-        switch (currentState)
-        {
-            case EnemyState.Idle:
-                if (distanceToPlayer < detectionRange) currentState = EnemyState.Chase;
-                break;
-
-            case EnemyState.Chase:
-                MoveTowardsPlayer();
-                isMoving = true;
-                if (distanceToPlayer <= attackRange) currentState = EnemyState.Attack;
-                else if (distanceToPlayer > detectionRange * 1.5f) currentState = EnemyState.Idle;
-                break;
-
-            case EnemyState.Attack:
-                AttackBehavior(distanceToPlayer);
-                break;
-        }
-
-        FacePlayer();
-        
-        if(anim != null) anim.SetBool("IsMoving", isMoving);
+        case EnemyState.Attack:
+            AttackBehavior(distanceToPlayer);
+            break;
     }
+
+    FacePlayer();
+    if (anim != null) anim.SetBool("IsMoving", isMoving);
+}
+
 
     void MoveTowardsPlayer()
     {
@@ -52,6 +51,14 @@ public class ThugEnemy : EnemyBase
 
     void AttackBehavior(float dist)
     {
+    if (takingDamage || isStuned || isDead) {
+        
+         attackCooldown = timeBetweenAttacks;
+
+        return;
+    
+    }
+
         if (dist > attackRange) { currentState = EnemyState.Chase; return; }
 
         attackCooldown -= Time.deltaTime; // كنقصو الوقت
@@ -65,13 +72,15 @@ public class ThugEnemy : EnemyBase
 
     void PerformAttack()
     {
+    if (takingDamage || isStuned || isDead) return;
+
         if(anim != null) anim.SetTrigger("Attack");
 
         Collider2D[] hitPlayers = Physics2D.OverlapCircleAll(attackPoint.position, attackRadius, playerLayer);
         foreach (Collider2D player in hitPlayers)
         {
             PlayerHealth ph = player.GetComponent<PlayerHealth>();
-            if (ph != null) 
+            if (ph != null && !takingDamage && !isStuned && !isDead) 
             {
                 ph.TakeDamage(damage);
             }

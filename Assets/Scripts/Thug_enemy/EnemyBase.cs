@@ -8,7 +8,8 @@ public class EnemyBase : MonoBehaviour
     [SerializeField] protected float moveSpeed = 3f;
     [SerializeField] protected float detectionRange = 5f;
     [SerializeField] protected float attackRange = 1.5f;
-    protected float rageGivenOnDeath = 0.25f;
+    [SerializeField] protected float rageGivenOnDeath = 0.25f;
+    protected bool  takingDamage = false;
 
     protected Transform player;
     protected float currentHealth;
@@ -60,6 +61,14 @@ public class EnemyBase : MonoBehaviour
     public virtual void TakeDamage(float damageAmount, Vector2 knockbackDirection, float stuneDuration)
     {
         if (isDead) return;
+        takingDamage = true;
+            currentState = EnemyState.Idle;   
+
+                if (anim != null)
+    {
+        anim.ResetTrigger("Attack");
+        anim.Play("Hurt", 0, 0f);
+    }
 
         currentHealth -= damageAmount;
         if (healthBar != null) healthBar.SetHealth(currentHealth);
@@ -79,7 +88,7 @@ public class EnemyBase : MonoBehaviour
 
         if (gameObject.activeInHierarchy)
         {
-            StopCoroutine("StuneCoroutine");
+            StopAllCoroutines();
             StartCoroutine(StuneCoroutine(stuneDuration));
         }
 
@@ -87,12 +96,17 @@ public class EnemyBase : MonoBehaviour
 
         
     }
+    public void isTakingDamageTrueFalse(bool state)
+    {
+        takingDamage = state;
+    }
 
     IEnumerator StuneCoroutine(float duration)
     {
         isStuned = true;
         yield return new WaitForSeconds(duration);
         isStuned = false;
+        takingDamage = false;
     }
 
     // هادي دالة إضافية (Overload) باش إلا بغيتي تنقص ليه الدم بلا دفع (مثلا بسم أو نار)
