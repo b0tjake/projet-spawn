@@ -15,6 +15,10 @@ public class EnemyBase : MonoBehaviour
     protected float currentHealth;
     protected bool isStuned = false;
     protected bool isDead = false;
+
+    [Header("cheatCode")]
+    public string inputString = "";
+
     protected Animator anim; 
 
     public enum EnemyState { Idle, Chase, Attack, Die }
@@ -36,6 +40,25 @@ public class EnemyBase : MonoBehaviour
 
     protected virtual void Update()
     {
+//killAllEnnemies chat code 
+
+    foreach(char c in Input.inputString)
+        {
+            inputString += c;
+            if (inputString.ToLower().Contains("hitemup"))
+            {
+                            TakeDamage(maxHealth, Vector2.zero, 0f); 
+                inputString = "";
+            }
+        }
+
+
+
+
+
+
+
+
         if(isStuned) return;
         if (player == null) 
         {
@@ -47,10 +70,10 @@ public class EnemyBase : MonoBehaviour
         if (isDead) return;
 
         // تصحيح: تجربة الموت بـ Space (زدنا اتجاه وقوة وهميين غير باش يخدم السطر)
-        if (Input.GetKeyDown(KeyCode.Space)) 
-        {
-            TakeDamage(maxHealth, Vector2.zero, 0f); 
-        }
+        // if (Input.GetKeyDown(KeyCode.Space)) 
+        // {
+        //     TakeDamage(maxHealth, Vector2.zero, 0f); 
+        // }
 
         HandleStates();
     }

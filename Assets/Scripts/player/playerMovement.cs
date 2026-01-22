@@ -33,6 +33,7 @@ public class playerMovement : MonoBehaviour
     private float originalScaleX;
     private float originalScaleY;
     private bool grounded = false;
+    public bool dontFall = false;
     private bool isCrouching = false;
     public bool isSpecialAttacking = false;
     
@@ -97,7 +98,13 @@ public float maxRage = 4.0f;
     #region Input & Logic Handling
     private void HandleInput()
     {
-        if(isFlyKicking) return;
+        if(isSpecialAttacking || anim.GetBool("isGuarding")) {
+            Move(0);
+            return;
+        }
+        else if (isFlyKicking) {
+            return;
+        }
         // 1. Crouch Logic
         isCrouching = Input.GetKey(KeyCode.S);
         anim.SetBool("crouching", isCrouching);
@@ -125,12 +132,12 @@ public float maxRage = 4.0f;
           StartCoroutine(performFlyingKick());
         }
         //special attack 1
-        if(Input.GetKeyDown(KeyCode.O) && rageValue >= 1.0f)
+        if(Input.GetKeyDown(KeyCode.O) && rageValue >= 1.0f && grounded)
         {
             StartCoroutine(SpecialAttackInput());
         }
         //special attack 2 (gun)
-        if(Input.GetKeyDown(KeyCode.L) && rageValue >= 1.0f)
+        if(Input.GetKeyDown(KeyCode.L) && rageValue >= 1.0f && grounded)
         {
             StartCoroutine(GunSpecialAttack());
         }
@@ -181,7 +188,7 @@ public void ShootBullet()
 IEnumerator performFlyingKick()
 {
     isFlyKicking = true;
-    grounded = true;
+    // grounded = true;
 
     // Force animation state
     anim.SetBool("flyKick", true);
@@ -379,6 +386,7 @@ private void UpdateRageUI()
     IEnumerator SpecialAttackInput(){
         {
             isSpecialAttacking = true;
+
             anim.SetBool("spAttack", true); 
             anim.SetBool("specialAttack1", true);            
             // damage = 50f;
@@ -386,6 +394,7 @@ private void UpdateRageUI()
             // Reduce rage
             IncreaseRage(-1.0f);
             yield return new WaitForSeconds(4.0f);
+            isSpecialAttacking = false;
             anim.SetBool("spAttack", false);
                 anim.SetBool("specialAttack1", false);            
     // damage = 20f;
@@ -451,6 +460,9 @@ public void ExecuteBombExplosionHit()
         if(jumpCoroutine != null)
         {
             StopCoroutine(jumpCoroutine);
+        }
+        if(collision.gameObject.CompareTag("dontFall")) {
+         dontFall = true;   
         }
     }
 

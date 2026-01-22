@@ -37,9 +37,7 @@ public class PlayerHealth : MonoBehaviour
             isGuarding = true;
             anim.SetBool("isGuarding", true); 
             
-            if(movementScript != null) movementScript.enabled = false;
-            GetComponent<Rigidbody2D>().linearVelocity = Vector2.zero;
-        }
+            GetComponent<Rigidbody2D>().linearVelocity = Vector2.zero;        }
 
         if (Input.GetKeyUp(KeyCode.H))
         {
@@ -47,6 +45,11 @@ public class PlayerHealth : MonoBehaviour
             anim.SetBool("isGuarding", false);
 
             if(movementScript != null) movementScript.enabled = true;
+        }
+        if(movementScript.dontFall) {
+            Die();
+            currentHealth = 0;
+            if (healthBar != null) healthBar.SetHealth(currentHealth);
         }
     }
 
