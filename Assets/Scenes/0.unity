@@ -1525,7 +1525,6 @@ MonoBehaviour:
   speed: 5
   jumpForce: 7.5
   playerAttackBox: {fileID: 375956263}
-  grounded: 0
   dontFall: 0
   isSpecialAttacking: 0
   bulletPrefab: {fileID: 7637160243714887542, guid: a6db934040fe7664dbc14779605e06cc, type: 3}
@@ -35727,6 +35726,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::menuManager
   menuUI: {fileID: 820585947}
   settingsUI: {fileID: 1143163070}
+  isMenuOpen: 0
 --- !u!1 &1857293049
 GameObject:
   m_ObjectHideFlags: 0
@@ -36911,6 +36911,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 98dec8807c86e9c41ac47f5c1e0f4d0a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::inputManager
+  <menuOpensClose>k__BackingField: 0
+  playerInput: {fileID: 0}
+  menuAction:
+    m_Name: 
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: 30da809a-7a94-4505-bd39-2fd153952fef
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings: []
+    m_Flags: 0
 --- !u!1 &1993121003
 GameObject:
   m_ObjectHideFlags: 0
