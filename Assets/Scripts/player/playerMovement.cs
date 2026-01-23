@@ -1,5 +1,7 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class playerMovement : MonoBehaviour
@@ -32,8 +34,9 @@ public class playerMovement : MonoBehaviour
     private Animator anim;
     private float originalScaleX;
     private float originalScaleY;
-    private bool grounded = false;
+    [SerializeField] private bool grounded = false;
     public bool dontFall = false;
+    private string inputString = "";
     private bool isCrouching = false;
     public bool isSpecialAttacking = false;
     
@@ -92,59 +95,92 @@ public float maxRage = 4.0f;
         }
         // إلا كنا في الأرض، نحيدو Jump
         if (grounded) anim.SetBool("jump", false);
+        //restart the game
+            foreach(char c in Input.inputString){
+        inputString += c;
+        if (inputString.Length > 20) inputString = inputString.Substring(inputString.Length - 20);
+    if (inputString.ToLower().Contains("rehitemup"))
+            {
+                inputString = "";
+                Time.timeScale = 1f;
+                Scene activeScene = SceneManager.GetActiveScene();
+                SceneManager.LoadScene(activeScene.name);
+            }
+    }   
     }
     #endregion
 
     #region Input & Logic Handling
-    private void HandleInput()
-    {
-        if(isSpecialAttacking || anim.GetBool("isGuarding")) {
-            Move(0);
-            return;
-        }
-        else if (isFlyKicking) {
-            return;
-        }
-        // 1. Crouch Logic
-        isCrouching = Input.GetKey(KeyCode.S);
-        anim.SetBool("crouching", isCrouching);
+private void HandleInput()
+{
+    // Grouping Gamepad for cleaner code
+    var pad = Gamepad.current;
 
-        // 2. Movement & Flip
-        float move = Input.GetAxisRaw("Horizontal");
-        Move(move);
-        if (move != 0) Flip(move);
-
-        // 3. Jump
-        if (Input.GetKeyDown(KeyCode.W) && grounded) {
-            jumpCoroutine = StartCoroutine(Jump());
-        }
-
-        // 4. Attack
-        if (Time.time >= nextAttackTime)
-        {
-            if (Input.GetKeyDown(KeyCode.K) && grounded) Attack("kickAttack");
-            else if (Input.GetKeyDown(KeyCode.J) && grounded) Attack("attack");
-        }
-
-        if(!grounded && !isFlyKicking && Input.GetKeyDown(KeyCode.K))
-        {
-
-          StartCoroutine(performFlyingKick());
-        }
-        //special attack 1
-        if(Input.GetKeyDown(KeyCode.O) && rageValue >= 1.0f && grounded)
-        {
-            StartCoroutine(SpecialAttackInput());
-        }
-        //special attack 2 (gun)
-        if(Input.GetKeyDown(KeyCode.L) && rageValue >= 1.0f && grounded)
-        {
-            StartCoroutine(GunSpecialAttack());
-        }
-
-        // Update Animations
-        anim.SetBool("moving", move != 0);
+    if (isSpecialAttacking || anim.GetBool("isGuarding")) {
+        Move(0);
+        return;
     }
+    else if (isFlyKicking) {
+        return;
+    }
+
+    // 1. Crouch Logic (S or D-Pad Down)
+    isCrouching = Input.GetKey(KeyCode.S) || (pad != null && pad.dpad.down.isPressed);
+    anim.SetBool("crouching", isCrouching);
+
+    // 2. Movement & Flip
+    float move = Input.GetAxisRaw("Horizontal");
+    if (move == 0 && pad != null)
+    {
+        if (pad.dpad.right.isPressed) move = 1;
+        else if (pad.dpad.left.isPressed) move = -1;
+    }
+
+    Move(move);
+    if (move != 0) Flip(move);
+
+    // 3. Jump (Space or Cross/South)
+    bool jumpRequest = Input.GetKeyDown(KeyCode.Space) || (pad != null && pad.buttonSouth.wasPressedThisFrame);
+    if (jumpRequest && grounded) {
+        jumpCoroutine = StartCoroutine(Jump());
+    }
+
+    // 4. Attack & Flying Kick Logic
+    bool kickPressed = Input.GetKeyDown(KeyCode.K) || (pad != null && pad.buttonEast.wasPressedThisFrame);
+    bool punchPressed = Input.GetKeyDown(KeyCode.J) || (pad != null && pad.buttonWest.wasPressedThisFrame);
+
+    if (kickPressed)
+    {
+        // AIR ATTACK (Flying Kick)
+        if (!grounded && !isFlyKicking)
+        {
+            StartCoroutine(performFlyingKick());
+        }
+        // GROUND ATTACK (Regular Kick)
+        else if (grounded && Time.time >= nextAttackTime)
+        {
+            Attack("kickAttack");
+        }
+    }
+
+    if (punchPressed && grounded && Time.time >= nextAttackTime)
+    {
+        Attack("attack");
+    }
+
+    // Special attacks
+    if ((Input.GetKeyDown(KeyCode.O) || (pad != null && pad.leftShoulder.wasPressedThisFrame)) && rageValue >= 1.0f && grounded)
+    {
+        StartCoroutine(SpecialAttackInput());
+    }
+    
+    if ((Input.GetKeyDown(KeyCode.L) || (pad != null && pad.rightShoulder.wasPressedThisFrame)) && rageValue >= 1.0f && grounded)
+    {
+        StartCoroutine(GunSpecialAttack());
+    }
+
+    anim.SetBool("moving", move != 0);
+}
 
 IEnumerator GunSpecialAttack()
 {
@@ -188,7 +224,7 @@ public void ShootBullet()
 IEnumerator performFlyingKick()
 {
     isFlyKicking = true;
-    // grounded = true;
+    grounded = true;
 
     // Force animation state
     anim.SetBool("flyKick", true);
@@ -241,7 +277,6 @@ private void stopFlyingKick()
         playerAttackBox.SetActive(false);
 }
 
-
     private void HandleCooldowns()
     {
         if (comboTimer > 0) comboTimer -= Time.deltaTime;
@@ -272,6 +307,7 @@ private void stopFlyingKick()
         float x = (dir > 0) ? Mathf.Abs(originalScaleX) : -Mathf.Abs(originalScaleX);
         transform.localScale = new Vector3(x, originalScaleY, 1);
     }
+
 
     private void Attack(string attackPrefix)
     {
@@ -400,7 +436,10 @@ private void UpdateRageUI()
     // damage = 20f;
         }
     }
-    
+
+        
+    //restart the game 
+ 
 
 public void ExecuteBombExplosionHit()
 {

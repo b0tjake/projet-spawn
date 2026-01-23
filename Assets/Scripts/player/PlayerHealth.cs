@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class PlayerHealth : MonoBehaviour
 {
@@ -32,14 +33,14 @@ public class PlayerHealth : MonoBehaviour
         if (isDead) return;
 
         // Guard Logic (H Key)
-        if (Input.GetKeyDown(KeyCode.H))
+        if (Input.GetKeyDown(KeyCode.H) || (Gamepad.current != null && Gamepad.current.buttonNorth.wasPressedThisFrame))
         {
             isGuarding = true;
             anim.SetBool("isGuarding", true); 
             
             GetComponent<Rigidbody2D>().linearVelocity = Vector2.zero;        }
 
-        if (Input.GetKeyUp(KeyCode.H))
+        if (Input.GetKeyUp(KeyCode.H) || (Gamepad.current != null && Gamepad.current.buttonNorth.wasReleasedThisFrame))
         {
             isGuarding = false;
             anim.SetBool("isGuarding", false);
