@@ -51,6 +51,8 @@ public class playerMovement : MonoBehaviour
     private float flyKickDuration = 0.5f;
     private bool isFlyKicking = false;
     private float defaultGravityScale;
+    [SerializeField] private bool flyKickLimits = false;
+
 
     #endregion
     [Header("Gun Attack")]
@@ -84,6 +86,10 @@ public float maxRage = 4.0f;
 
     void Update()
     {
+
+
+        flyKicklimiter();
+
         HandleCooldowns();
         HandleInput();
 
@@ -149,10 +155,10 @@ private void HandleInput()
     bool kickPressed = Input.GetKeyDown(KeyCode.K) || (pad != null && pad.buttonEast.wasPressedThisFrame);
     bool punchPressed = Input.GetKeyDown(KeyCode.J) || (pad != null && pad.buttonWest.wasPressedThisFrame);
 
-    if (kickPressed)
+    if (kickPressed && !isFlyKicking)
     {
         // AIR ATTACK (Flying Kick)
-        if (!grounded && !isFlyKicking)
+        if (!grounded && !flyKickLimits)
         {
             StartCoroutine(performFlyingKick());
         }
@@ -207,6 +213,14 @@ IEnumerator GunSpecialAttack()
     isSpecialAttacking = false;
     anim.SetBool("spAttack", false);
 }
+
+public void flyKicklimiter()
+    {
+        if (grounded)
+        {
+            flyKickLimits = true;
+        }
+    }
 public void ShootBullet()
 {
     GameObject b = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
@@ -224,7 +238,8 @@ public void ShootBullet()
 IEnumerator performFlyingKick()
 {
     isFlyKicking = true;
-    grounded = true;
+    flyKickLimits = true;
+    // grounded = true;
 
     // Force animation state
     anim.SetBool("flyKick", true);
@@ -262,6 +277,7 @@ private void stopFlyingKick()
     if (!isFlyKicking) return;
 
     isFlyKicking = false;
+    flyKickLimits = true;
     // grounded = false;
 
     anim.SetBool("flyKick", false);
@@ -292,6 +308,7 @@ private void stopFlyingKick()
 
     IEnumerator Jump()
     {
+        flyKickLimits = false;
         rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpForce);
         grounded = false; 
         yield return new WaitForSeconds(1f);
@@ -488,13 +505,16 @@ public void ExecuteBombExplosionHit()
         yield return new WaitForSecondsRealtime(duration);
         Time.timeScale = 1f;
     }
-
+        
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Ground")) grounded = true;
         rb.gravityScale = defaultGravityScale;
         anim.SetBool("glide", false);
         anim.SetBool("jump", false);
+        anim.SetBool("flyKick", false); 
+        anim.SetBool("grounded", grounded);
+
 
         if(jumpCoroutine != null)
         {
