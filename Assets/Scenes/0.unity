@@ -375,8 +375,8 @@ Transform:
   m_GameObject: {fileID: 56238588}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 136.03, y: -2.49, z: 0}
-  m_LocalScale: {x: -4.755281, y: 4.755281, z: 4.755281}
+  m_LocalPosition: {x: 136, y: -3.0088, z: 0}
+  m_LocalScale: {x: -5.9992623, y: 5.9992623, z: 5.9992623}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1544960000}
@@ -562,7 +562,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cd02f70e05c7d4c4a98eec321c5bdeb2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ThugEnemy
-  maxHealth: 100
+  maxHealth: 110
   moveSpeed: 2
   detectionRange: 5.7
   attackRange: 2.81
@@ -860,8 +860,8 @@ Transform:
   m_GameObject: {fileID: 185347560}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 4.83, y: -3.67, z: 0}
-  m_LocalScale: {x: -4.755281, y: 4.755281, z: 4.755281}
+  m_LocalPosition: {x: 4.7816, y: -4.41, z: 0}
+  m_LocalScale: {x: -3.4102972, y: 3.4102972, z: 3.4102972}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 874595655}
@@ -1422,7 +1422,7 @@ Transform:
   m_GameObject: {fileID: 207040372}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -14.7, y: -7, z: 0}
+  m_LocalPosition: {x: -18.63, y: -7, z: 0}
   m_LocalScale: {x: 2.6515267, y: 2.6544821, z: 2.4626422}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1538,8 +1538,8 @@ Transform:
   m_GameObject: {fileID: 226478383}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 20.44, y: -3.53, z: 0}
-  m_LocalScale: {x: -4.755281, y: 4.755281, z: 4.755281}
+  m_LocalPosition: {x: 20.428, y: -3.23, z: 0}
+  m_LocalScale: {x: -5.259816, y: 5.259816, z: 5.259816}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1331619271}
@@ -26606,8 +26606,8 @@ Transform:
   m_GameObject: {fileID: 978383513}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 62.25, y: -3.49, z: 0}
-  m_LocalScale: {x: -4.755281, y: 4.755281, z: 4.755281}
+  m_LocalPosition: {x: 72.013, y: -3.18, z: 0}
+  m_LocalScale: {x: -5.125242, y: 5.125242, z: 5.125242}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1681129862}
@@ -26793,7 +26793,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cd02f70e05c7d4c4a98eec321c5bdeb2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ThugEnemy
-  maxHealth: 100
+  maxHealth: 105
   moveSpeed: 2
   detectionRange: 5.7
   attackRange: 2.81
@@ -28042,8 +28042,8 @@ Transform:
   m_GameObject: {fileID: 1161556241}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 162.88, y: -4.13, z: 1.51}
-  m_LocalScale: {x: -4.755281, y: 4.755281, z: 4.755281}
+  m_LocalPosition: {x: 172.15, y: -4.09, z: 1.51}
+  m_LocalScale: {x: -9.113019, y: 9.113019, z: 9.113019}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2064549766}
@@ -30088,8 +30088,8 @@ Transform:
   m_GameObject: {fileID: 1458398518}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 89.15, y: -4.69, z: 0}
-  m_LocalScale: {x: -4.755281, y: 4.755281, z: 4.755281}
+  m_LocalPosition: {x: 89.174, y: -3.91, z: 0}
+  m_LocalScale: {x: -5.4276776, y: 5.4276776, z: 5.4276776}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 949742746}
@@ -30275,7 +30275,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cd02f70e05c7d4c4a98eec321c5bdeb2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ThugEnemy
-  maxHealth: 100
+  maxHealth: 105
   moveSpeed: 2
   detectionRange: 5.7
   attackRange: 2.81
@@ -31594,8 +31594,8 @@ Transform:
   m_GameObject: {fileID: 1716755062}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 33.54, y: -3.5, z: 0}
-  m_LocalScale: {x: -4.755281, y: 4.755281, z: 4.755281}
+  m_LocalPosition: {x: 33.59, y: -2.97, z: 0}
+  m_LocalScale: {x: -6.1338367, y: 6.1338367, z: 6.1338367}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1284448204}
@@ -31781,7 +31781,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cd02f70e05c7d4c4a98eec321c5bdeb2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ThugEnemy
-  maxHealth: 100
+  maxHealth: 120
   moveSpeed: 2
   detectionRange: 5.7
   attackRange: 2.81
@@ -32485,8 +32485,8 @@ Transform:
   m_GameObject: {fileID: 1915338170}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 118.99, y: -3.68, z: 0}
-  m_LocalScale: {x: -4.755281, y: 4.755281, z: 4.755281}
+  m_LocalPosition: {x: 118.97, y: -3.05, z: 0}
+  m_LocalScale: {x: -5.4952025, y: 5.4952025, z: 5.4952025}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 415927470}
@@ -32672,7 +32672,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cd02f70e05c7d4c4a98eec321c5bdeb2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ThugEnemy
-  maxHealth: 100
+  maxHealth: 90
   moveSpeed: 2
   detectionRange: 5.7
   attackRange: 2.81
@@ -32717,8 +32717,8 @@ Transform:
   m_GameObject: {fileID: 1940894995}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -6, y: -6.4, z: 0}
-  m_LocalScale: {x: -4.755281, y: 4.755281, z: 4.755281}
+  m_LocalPosition: {x: -7.2, y: -6.96, z: 0}
+  m_LocalScale: {x: -3.0740514, y: 3.0740514, z: 3.0740514}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1319896391}
@@ -32904,7 +32904,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cd02f70e05c7d4c4a98eec321c5bdeb2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ThugEnemy
-  maxHealth: 100
+  maxHealth: 50
   moveSpeed: 2
   detectionRange: 5.7
   attackRange: 2.81
