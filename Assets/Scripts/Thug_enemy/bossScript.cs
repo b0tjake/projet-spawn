@@ -4,6 +4,8 @@ using System.Collections;
 
 public class BossController : EnemyBase 
 {
+    [Header("bossArea closure")]
+    public GameObject closeArea;
     [Header("1. Boss Specifics")]
     public Slider bossHealthBar;       
     public Transform attackPoint;      
@@ -103,6 +105,7 @@ public class BossController : EnemyBase
         }
 
         anim.SetTrigger("Die");
+        closeArea.SetActive(false);
 
         // if(bossHealthBar != null) bossHealthBar.gameObject.SetActive(false);
 
@@ -120,6 +123,7 @@ public class BossController : EnemyBase
             transform.localScale = new Vector3(-Mathf.Abs(transform.localScale.x), transform.localScale.y, 1);
 
         anim.SetBool("isMoving", true);
+        closeArea.SetActive(true);
         
         Vector2 target = new Vector2(player.position.x, transform.position.y);
         transform.position = Vector2.MoveTowards(transform.position, target, moveSpeed * Time.deltaTime);
