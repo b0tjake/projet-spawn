@@ -1692,7 +1692,7 @@ Transform:
   m_GameObject: {fileID: 207040372}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -23.6, y: -6.27, z: 0}
+  m_LocalPosition: {x: -21.4, y: -5.3, z: 0}
   m_LocalScale: {x: 2.6515267, y: 2.6544821, z: 2.4626422}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -37041,7 +37041,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Controls
+  m_text: Restart
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 7c1847059eace39408b01eb552c00898, type: 2}
   m_sharedMaterial: {fileID: -2425311866030124772, guid: 7c1847059eace39408b01eb552c00898, type: 2}

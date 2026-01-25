@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class menuManager : MonoBehaviour
 {
@@ -47,8 +48,9 @@ public class menuManager : MonoBehaviour
 
     public void OnSettingsButton()
     {
-        settingsUI.SetActive(true);
-        menuUI.SetActive(false);
+                Time.timeScale = 1f;
+                Scene activeScene = SceneManager.GetActiveScene();
+                SceneManager.LoadScene(activeScene.name);
     }
 
     public void OnResumeButton()
