@@ -527,8 +527,8 @@ Transform:
   m_GameObject: {fileID: 56238588}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 136.03, y: -2.49, z: 0}
-  m_LocalScale: {x: -4.755281, y: 4.755281, z: 4.755281}
+  m_LocalPosition: {x: 122.12, y: -4.19, z: 0}
+  m_LocalScale: {x: -3.5447767, y: 3.5447767, z: 3.5447767}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1544960000}
@@ -1692,7 +1692,7 @@ Transform:
   m_GameObject: {fileID: 207040372}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -23.6, y: -6.27, z: 0}
+  m_LocalPosition: {x: -23.1, y: -6.5, z: 0}
   m_LocalScale: {x: 2.6515267, y: 2.6544821, z: 2.4626422}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1860,9 +1860,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1831636371}
-        m_TargetAssemblyTypeName: menuManager, Assembly-CSharp
-        m_MethodName: OnSettingsButton
+      - m_Target: {fileID: 1683916796}
+        m_TargetAssemblyTypeName: MenuController, Assembly-CSharp
+        m_MethodName: OpenControls
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2052,8 +2052,8 @@ Transform:
   m_GameObject: {fileID: 226478383}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 20.44, y: -3.53, z: 0}
-  m_LocalScale: {x: -4.755281, y: 4.755281, z: 4.755281}
+  m_LocalPosition: {x: -6.44, y: -6.93, z: 0}
+  m_LocalScale: {x: -3.4102972, y: 3.4102972, z: 3.4102972}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1331619271}
@@ -25712,7 +25712,7 @@ Tilemap:
     m_Data: {r: 1, g: 1, b: 1, a: 1}
   m_TileObjectToInstantiateArray: []
   m_AnimationFrameRate: 1
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 0.61698115, b: 0.61698115, a: 1}
   m_Origin: {x: -60, y: -21, z: 0}
   m_Size: {x: 253, y: 33, z: 1}
   m_TileAnchor: {x: 0.5, y: 0.5, z: 0}
@@ -26007,7 +26007,7 @@ Transform:
   m_GameObject: {fileID: 602051099}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -9.93, y: -6.03, z: 0}
+  m_LocalPosition: {x: 16.53, y: -3.56, z: 0}
   m_LocalScale: {x: -4.755281, y: 4.755281, z: 4.755281}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -26792,7 +26792,7 @@ Transform:
   m_GameObject: {fileID: 688802840}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 105.56, y: -3.31, z: 0}
+  m_LocalPosition: {x: 115.41, y: -3.69, z: 0}
   m_LocalScale: {x: -4.755281, y: 4.755281, z: 4.755281}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -27543,7 +27543,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &820585948
 RectTransform:
   m_ObjectHideFlags: 0
@@ -27580,7 +27580,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 0.028301716, b: 0.028301716, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -28494,7 +28494,7 @@ Transform:
   m_GameObject: {fileID: 978383513}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 70.04, y: -3.49, z: 0}
+  m_LocalPosition: {x: 72.48, y: -3.57, z: 0}
   m_LocalScale: {x: -4.755281, y: 4.755281, z: 4.755281}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -30099,7 +30099,7 @@ MonoBehaviour:
   attackPoint: {fileID: 2064549766}
   transformDuration: 2.5
   attackCooldown: 1.2
-  bossDamage: 40
+  bossDamage: 25
   attackRadius: 1.8
 --- !u!50 &1161556243
 Rigidbody2D:
@@ -30113,7 +30113,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 50
+  m_Mass: 1
   m_LinearDamping: 0
   m_AngularDamping: 0.05
   m_GravityScale: 1
@@ -30277,8 +30277,8 @@ Transform:
   m_GameObject: {fileID: 1161556241}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 162.88, y: -4.13, z: 1.51}
-  m_LocalScale: {x: -4.755281, y: 4.755281, z: 4.755281}
+  m_LocalPosition: {x: 171.35, y: -2.2, z: 1.51}
+  m_LocalScale: {x: -7.512393, y: 7.512393, z: 7.512393}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2064549766}
@@ -30929,7 +30929,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1281085001
 RectTransform:
   m_ObjectHideFlags: 0
@@ -31858,10 +31858,10 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 58.9
+  m_fontSize: 71.6
   m_fontSizeBase: 58.9
   m_fontWeight: 400
-  m_enableAutoSizing: 0
+  m_enableAutoSizing: 1
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
@@ -32616,7 +32616,7 @@ Transform:
   m_GameObject: {fileID: 1458398518}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 89.15, y: -4.69, z: 0}
+  m_LocalPosition: {x: 89.53, y: -4.42, z: 0}
   m_LocalScale: {x: -4.755281, y: 4.755281, z: 4.755281}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -33930,9 +33930,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1831636371}
-        m_TargetAssemblyTypeName: menuManager, Assembly-CSharp
-        m_MethodName: OnQuitButton
+      - m_Target: {fileID: 1683916796}
+        m_TargetAssemblyTypeName: MenuController, Assembly-CSharp
+        m_MethodName: QuitGame
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -34382,6 +34382,50 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 978383514}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1683916795
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1683916797}
+  - component: {fileID: 1683916796}
+  m_Layer: 0
+  m_Name: MenuManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1683916796
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1683916795}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 28a6b9a340648324fa3f6ed3d79f3293, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::MenuController
+--- !u!4 &1683916797
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1683916795}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 588.7063, y: 580.6529, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1831636370}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1688696463
 GameObject:
@@ -35709,6 +35753,7 @@ Transform:
   m_Children:
   - {fileID: 1281085001}
   - {fileID: 1981814351}
+  - {fileID: 1683916797}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1831636371
@@ -36012,8 +36057,8 @@ Transform:
   m_GameObject: {fileID: 1915338170}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 118.99, y: -3.68, z: 0}
-  m_LocalScale: {x: -4.755281, y: 4.755281, z: 4.755281}
+  m_LocalPosition: {x: 119.07, y: -4.3, z: 0}
+  m_LocalScale: {x: -3.3093903, y: 3.3093903, z: 3.3093903}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 415927470}
@@ -36244,8 +36289,8 @@ Transform:
   m_GameObject: {fileID: 1940894995}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -6, y: -6.4, z: 0}
-  m_LocalScale: {x: -4.755281, y: 4.755281, z: 4.755281}
+  m_LocalPosition: {x: -13.816, y: -7.11, z: 0}
+  m_LocalScale: {x: -3.2757704, y: 3.2757704, z: 3.2757704}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1319896391}
@@ -36618,10 +36663,10 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 58.9
+  m_fontSize: 71.6
   m_fontSizeBase: 58.9
   m_fontWeight: 400
-  m_enableAutoSizing: 0
+  m_enableAutoSizing: 1
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
@@ -37068,10 +37113,10 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 58.9
+  m_fontSize: 71.6
   m_fontSizeBase: 58.9
   m_fontWeight: 400
-  m_enableAutoSizing: 0
+  m_enableAutoSizing: 1
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
@@ -37777,7 +37822,7 @@ Transform:
   m_GameObject: {fileID: 2118604178}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 147.44, y: -5.9, z: 0}
+  m_LocalPosition: {x: 149.49, y: -6.53, z: 0}
   m_LocalScale: {x: -4.755281, y: 4.755281, z: 4.755281}
   m_ConstrainProportionsScale: 0
   m_Children:

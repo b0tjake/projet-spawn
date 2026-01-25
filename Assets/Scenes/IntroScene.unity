@@ -146,14 +146,14 @@ RectTransform:
   m_GameObject: {fileID: 14859449}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.099, y: 1.099, z: 1.099}
+  m_LocalScale: {x: 1.4287, y: 1.06603, z: 1.099}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 670749951}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -491}
+  m_AnchoredPosition: {x: 0, y: -325}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &14859451
@@ -185,15 +185,15 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4278245126
-  m_fontColor: {r: 0.021651948, g: 0.8415094, b: 0, a: 1}
+    rgba: 4294967295
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
   m_enableVertexGradient: 1
   m_colorMode: 3
   m_fontColorGradient:
-    topLeft: {r: 0.9547169, g: 0, b: 0.069581844, a: 1}
-    topRight: {r: 0.5999999, g: 0.49453312, b: 0.13018857, a: 1}
-    bottomLeft: {r: 0.1426467, g: 0.7132075, b: 0.025567714, a: 1}
-    bottomRight: {r: 0, g: 0.9863579, b: 1, a: 1}
+    topLeft: {r: 0, g: 0, b: 0, a: 1}
+    topRight: {r: 1, g: 0.9490196, b: 0.9490196, a: 1}
+    bottomLeft: {r: 1, g: 0.9490196, b: 0.9490196, a: 1}
+    bottomRight: {r: 1, g: 0.9490196, b: 0.9490196, a: 1}
   m_fontColorGradientPreset: {fileID: 0}
   m_spriteAsset: {fileID: 0}
   m_tintAllSprites: 0
@@ -485,7 +485,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.735849, g: 0.19298676, b: 0.19298676, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
