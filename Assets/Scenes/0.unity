@@ -1341,6 +1341,7 @@ GameObject:
   - component: {fileID: 207040380}
   - component: {fileID: 207040379}
   - component: {fileID: 207040378}
+  - component: {fileID: 207040382}
   - component: {fileID: 207040377}
   - component: {fileID: 207040376}
   - component: {fileID: 207040375}
@@ -1525,9 +1526,6 @@ MonoBehaviour:
   speed: 5
   jumpForce: 7.5
   playerAttackBox: {fileID: 375956263}
-  grounded: 0
-  dontFall: 0
-  isSpecialAttacking: 0
   flyKickLimits: 0
   bulletPrefab: {fileID: 7637160243714887542, guid: a6db934040fe7664dbc14779605e06cc, type: 3}
   firePoint: {fileID: 1653269328}
@@ -1552,6 +1550,9 @@ MonoBehaviour:
   - {fileID: 1712400747}
   - {fileID: 633552653}
   maxRage: 4
+  grounded: 0
+  dontFall: 0
+  isSpecialAttacking: 0
 --- !u!61 &207040378
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1702,6 +1703,19 @@ Transform:
   - {fileID: 1653269328}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &207040382
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 207040372}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a752fa1f047660d41aea5b79645528f3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerInputHandler
+  playerMovement: {fileID: 207040377}
 --- !u!1 &208344877
 GameObject:
   m_ObjectHideFlags: 0
