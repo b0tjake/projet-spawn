@@ -5,17 +5,22 @@ using UnityEngine.InputSystem.Controls;
 public class PlayerInputHandler : MonoBehaviour
 {
     [SerializeField] private playerMovement playerMovement;
+    [SerializeField] private PlayerHealth playerHealth;
 
-    private void Awake()
-    {
-        if (playerMovement == null)
-            playerMovement = GetComponent<playerMovement>();
-    }
+private void Awake()
+{
+    if (playerMovement == null)
+        playerMovement = GetComponent<playerMovement>();
+
+    if (playerHealth == null)
+        playerHealth = GetComponent<PlayerHealth>();
+}
 
     private void Update()
     {
         ReadMovement();
         ReadActions();
+        ReadGuard();
     }
 
     private void ReadMovement()
@@ -50,6 +55,9 @@ public class PlayerInputHandler : MonoBehaviour
                 crouch = true;
         }
 
+        // Guard (hold)
+
+
         // Generic USB Joystick
         if (joystick != null)
         {
@@ -63,9 +71,11 @@ public class PlayerInputHandler : MonoBehaviour
                 crouch = true;
         }
 
+
         playerMovement.SetMoveInput(move);
         playerMovement.SetCrouch(crouch);
     }
+    
 
     // private void ReadActions()
     // {
@@ -122,7 +132,7 @@ private void ReadActions()
     // Jump
     if ((keyboard != null && keyboard.spaceKey.wasPressedThisFrame) ||
         (gamepad != null && gamepad.buttonSouth.wasPressedThisFrame) ||
-        (joystick != null && joystick.trigger.wasPressedThisFrame))
+        (joystick != null && joystick["button3"] is ButtonControl button4 && button4.wasPressedThisFrame))
     {
         playerMovement.tryJump();
     }
@@ -158,6 +168,20 @@ private void ReadActions()
     {
         playerMovement.special2();
     }
+}
+private void ReadGuard()
+{
+    var keyboard = Keyboard.current;
+    var gamepad = Gamepad.current;
+    var joystick = Joystick.current;
+
+    bool guardHeld =
+        (keyboard != null && keyboard.hKey.isPressed) ||
+        (gamepad != null && gamepad.buttonNorth.isPressed) ||
+        (joystick != null && joystick.trigger.isPressed);
+
+    if (playerHealth != null)
+        playerHealth.SetGuard(guardHeld);
 }
 
 }

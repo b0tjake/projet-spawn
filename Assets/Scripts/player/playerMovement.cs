@@ -132,7 +132,10 @@ public class playerMovement : MonoBehaviour
     {
         isCrouching = value;
     }
-
+    public void SetGuard(bool value)
+{
+    anim.SetBool("isGuarding", value);
+}
     public void tryJump()
     {
         if (isSpecialAttacking || anim.GetBool("isGuarding") || isFlyKicking) return;
@@ -230,7 +233,7 @@ public class playerMovement : MonoBehaviour
         if (isCrouching && grounded)
         {
             string crouchAnim = (attackPrefix == "kickAttack") ? "crouchKickAttack" : "crouchAttack";
-            anim.Play(crouchAnim, -1, 0f);
+            anim.Play(crouchAnim, 0, 0f);
             comboStep = 0;
             nextAttackTime = Time.time + attackRate + 0.3f;
         }
@@ -238,7 +241,7 @@ public class playerMovement : MonoBehaviour
         {
             comboStep++;
             if (comboStep > 5) comboStep = 1;
-            anim.Play(attackPrefix + comboStep, -1, 0f);
+            anim.Play(attackPrefix + comboStep, 0, 0f);
             nextAttackTime = Time.time + (comboStep == 5 ? attackRate + 0.5f : attackRate);
         }
     }
@@ -248,7 +251,7 @@ public class playerMovement : MonoBehaviour
     IEnumerator GunSpecialAttack()
     {
         isSpecialAttacking = true;
-        anim.SetBool("spAttack", true);
+        // anim.SetBool("spAttack", true);
         anim.Play("gunAttack");
         IncreaseRage(-1.0f);
 
@@ -267,13 +270,13 @@ public class playerMovement : MonoBehaviour
         yield return new WaitForSeconds(0.3f);
 
         isSpecialAttacking = false;
-        anim.SetBool("spAttack", false);
+        // anim.SetBool("spAttack", false);
     }
 
     IEnumerator SpecialAttackInput()
     {
         isSpecialAttacking = true;
-        anim.SetBool("spAttack", true);
+        // anim.SetBool("spAttack", true);
         anim.SetBool("specialAttack1", true);
 
         IncreaseRage(-1.0f);
@@ -281,9 +284,31 @@ public class playerMovement : MonoBehaviour
         yield return new WaitForSeconds(4.0f);
 
         isSpecialAttacking = false;
-        anim.SetBool("spAttack", false);
+        // anim.SetBool("spAttack", false);
         anim.SetBool("specialAttack1", false);
     }
+    public void ExecuteBombExplosionHit()
+{
+    if (CameraShake.instance != null) CameraShake.instance.Shake(0.15f, 0.4f);
+
+
+    float explosionRadius = 5f; 
+    float explosionDamage = 100f;
+
+    Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(transform.position, explosionRadius, enemyLayers);
+
+    foreach (Collider2D enemy in hitEnemies)
+    {
+        EnemyBase enemyScript = enemy.GetComponent<EnemyBase>();
+        if (enemyScript != null)
+        {
+            Vector2 knockbackDir = (enemy.transform.position - transform.position).normalized;
+            enemyScript.TakeDamage(explosionDamage, knockbackDir, 1.0f);
+        }
+    }
+
+    Debug.Log("Special Attack Explosion Triggered!");
+}
 
     public void ShootBullet()
     {

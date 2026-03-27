@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.InputSystem.Controls;
 
 public class PlayerHealth : MonoBehaviour
 {
@@ -28,32 +29,32 @@ public class PlayerHealth : MonoBehaviour
             gameManager = FindFirstObjectByType<GameOverManager>();
     }
 
-    protected virtual void Update()
+protected virtual void Update()
+{
+    if (isDead) return;
+
+    if (movementScript.dontFall)
     {
-        if (isDead) return;
-
-        // Guard Logic (H Key)
-        if (Input.GetKeyDown(KeyCode.H) || (Gamepad.current != null && Gamepad.current.buttonNorth.wasPressedThisFrame))
-        {
-            isGuarding = true;
-            anim.SetBool("isGuarding", true); 
-            
-            GetComponent<Rigidbody2D>().linearVelocity = Vector2.zero;        }
-
-        if (Input.GetKeyUp(KeyCode.H) || (Gamepad.current != null && Gamepad.current.buttonNorth.wasReleasedThisFrame))
-        {
-            isGuarding = false;
-            anim.SetBool("isGuarding", false);
-
-            if(movementScript != null) movementScript.enabled = true;
-        }
-        if(movementScript.dontFall) {
-            Die();
-            currentHealth = 0;
-            if (healthBar != null) healthBar.SetHealth(currentHealth);
-        }
+        Die();
+        currentHealth = 0;
+        if (healthBar != null) healthBar.SetHealth(currentHealth);
     }
+}
 
+    public void SetGuard(bool value)
+{
+    if (isDead) return;
+
+    isGuarding = value;
+    anim.SetBool("isGuarding", value);
+
+    if (value)
+    {
+        Rigidbody2D rb = GetComponent<Rigidbody2D>();
+        if (rb != null)
+            rb.linearVelocity = Vector2.zero;
+    }
+}
     public void TakeDamage(float damageAmount)
     {
         if (isDead) return;

@@ -91,7 +91,7 @@ public class EnemyBase : MonoBehaviour
                 if (anim != null)
     {
         anim.ResetTrigger("Attack");
-        anim.Play("Hurt", 0, 0f);
+        // anim.Play("Hurt", 0, 0f);
     }
 
         currentHealth -= damageAmount;

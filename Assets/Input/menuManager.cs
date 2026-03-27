@@ -1,11 +1,13 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.EventSystems;
 
 public class menuManager : MonoBehaviour
 {
     [SerializeField] private GameObject menuUI;
     [SerializeField] private GameObject settingsUI;
-    
+    [SerializeField] private GameObject firstSelectedButton;
+
     private bool isMenuOpen = false;
 
     void Start()
@@ -16,10 +18,9 @@ public class menuManager : MonoBehaviour
 
     void Update()
     {
-        // Use a null check to prevent errors
         if (inputManager.instance != null && inputManager.instance.menuOpensClose)
         {
-            if(!isMenuOpen) OpenMenu();
+            if (!isMenuOpen) OpenMenu();
             else CloseMenu();
         }
     }
@@ -28,11 +29,13 @@ public class menuManager : MonoBehaviour
     {
         menuUI.SetActive(true);
         isMenuOpen = true;
-        // Time.timeScale = 0f;
 
-        // Unlock cursor so you can click the Spawn buttons
         Cursor.visible = true;
         Cursor.lockState = CursorLockMode.None;
+        Time.timeScale = 0f;
+
+        EventSystem.current.SetSelectedGameObject(null);
+        EventSystem.current.SetSelectedGameObject(firstSelectedButton);
     }
 
     public void CloseMenu()
@@ -40,17 +43,19 @@ public class menuManager : MonoBehaviour
         menuUI.SetActive(false);
         settingsUI.SetActive(false);
         isMenuOpen = false;
-        // Time.timeScale = 1f; // Resume the game
+        Time.timeScale = 1f;
 
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
+
+        EventSystem.current.SetSelectedGameObject(null);
     }
 
     public void OnSettingsButton()
     {
-                Time.timeScale = 1f;
-                Scene activeScene = SceneManager.GetActiveScene();
-                SceneManager.LoadScene(activeScene.name);
+        Time.timeScale = 1f;
+        Scene activeScene = SceneManager.GetActiveScene();
+        SceneManager.LoadScene(activeScene.name);
     }
 
     public void OnResumeButton()
