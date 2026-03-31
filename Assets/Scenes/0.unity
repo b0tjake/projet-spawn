@@ -1843,7 +1843,7 @@ Transform:
   m_GameObject: {fileID: 207040372}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -20.8, y: -4.4, z: 0}
+  m_LocalPosition: {x: 142.24, y: -6.34, z: 0}
   m_LocalScale: {x: 2.6515267, y: 2.6544821, z: 2.4626422}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -27468,7 +27468,8 @@ EdgeCollider2D:
   - {x: 15.281388, y: 3.0602005}
   - {x: 15.289004, y: 13.193552}
   - {x: 17.726368, y: 12.987456}
-  - {x: 17.74179, y: 12.987535}
+  - {x: 17.743204, y: 12.984718}
+  - {x: 17.72799, y: 1.7978272}
   m_AdjacentStartPoint: {x: 0, y: 0}
   m_AdjacentEndPoint: {x: 0, y: 0}
   m_UseAdjacentStartPoint: 0
@@ -27798,7 +27799,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &820585948
 RectTransform:
   m_ObjectHideFlags: 0
@@ -31653,7 +31654,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0.000030517578}
+  m_AnchoredPosition: {x: 0, y: 0.000061035156}
   m_SizeDelta: {x: 3024, y: 686}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &1265580355
@@ -34485,8 +34486,8 @@ EdgeCollider2D:
   m_Points:
   - {x: 15.281388, y: 3.0602005}
   - {x: 17.71345, y: 2.9649694}
-  - {x: 17.71345, y: 9.864571}
-  - {x: 17.713448, y: 12.592319}
+  - {x: 17.712576, y: 2.9589612}
+  - {x: 17.713123, y: 2.9649458}
   m_AdjacentStartPoint: {x: 0, y: 0}
   m_AdjacentEndPoint: {x: 0, y: 0}
   m_UseAdjacentStartPoint: 0
