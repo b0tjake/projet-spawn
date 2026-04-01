@@ -1,6 +1,8 @@
 using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
+using UnityEngine.SceneManagement;
+
 
 public class BossController : EnemyBase 
 {
@@ -102,7 +104,10 @@ public class BossController : EnemyBase
             myRb.linearVelocity = Vector2.zero;
             myRb.bodyType = RigidbodyType2D.Kinematic;
             GetComponent<Collider2D>().enabled = false; 
+
+            StartCoroutine(DeathSequence());
         }
+        
 
         anim.SetTrigger("Die");
         closeArea.SetActive(false);
@@ -111,6 +116,11 @@ public class BossController : EnemyBase
 
         Destroy(gameObject, 5f);
     }
+        IEnumerator DeathSequence()
+        {
+            yield return new WaitForSeconds(3f);
+            SceneManager.LoadScene("xonekay");
+        }
 
 
     void MoveTowardsPlayer()

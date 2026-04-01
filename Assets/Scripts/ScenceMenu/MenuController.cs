@@ -23,7 +23,7 @@ public class MenuController : MonoBehaviour
 
     public void NewGame()
     {
-        SceneManager.LoadScene("0");
+        SceneManager.LoadScene("StoryScene");
     }
 
     public void QuitGame()

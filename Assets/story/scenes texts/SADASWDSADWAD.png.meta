@@ -1,0 +1,1365 @@
+fileFormatVersion: 2
+guid: 821f7a3734fd4974c8b5c04147691ec8
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -8881520610540840934
+    second: SADASWDSADWAD_0
+  - first:
+      213: 6720073421240120036
+    second: SADASWDSADWAD_1
+  - first:
+      213: -8242899089566237299
+    second: SADASWDSADWAD_2
+  - first:
+      213: -6246175355302162796
+    second: SADASWDSADWAD_3
+  - first:
+      213: 5801382913531769245
+    second: SADASWDSADWAD_4
+  - first:
+      213: -5188288460803625613
+    second: SADASWDSADWAD_5
+  - first:
+      213: 5407303215936730815
+    second: SADASWDSADWAD_6
+  - first:
+      213: 516065767078661022
+    second: SADASWDSADWAD_7
+  - first:
+      213: 7987208823662612769
+    second: SADASWDSADWAD_8
+  - first:
+      213: 5773228086290914094
+    second: SADASWDSADWAD_9
+  - first:
+      213: -2271602014813267902
+    second: SADASWDSADWAD_10
+  - first:
+      213: 3335101879314146225
+    second: SADASWDSADWAD_11
+  - first:
+      213: -1338325231585751841
+    second: SADASWDSADWAD_12
+  - first:
+      213: -6811989616367200030
+    second: SADASWDSADWAD_13
+  - first:
+      213: 143592801956303796
+    second: SADASWDSADWAD_14
+  - first:
+      213: 8807807889583351189
+    second: SADASWDSADWAD_15
+  - first:
+      213: 9055640743454134704
+    second: SADASWDSADWAD_16
+  - first:
+      213: -2487138049647677168
+    second: SADASWDSADWAD_17
+  - first:
+      213: 7593112470523728864
+    second: SADASWDSADWAD_18
+  - first:
+      213: -4828077502187884632
+    second: SADASWDSADWAD_19
+  - first:
+      213: -2059938849465148207
+    second: SADASWDSADWAD_20
+  - first:
+      213: 2752646567173877780
+    second: SADASWDSADWAD_21
+  - first:
+      213: 2730811484204912922
+    second: SADASWDSADWAD_22
+  - first:
+      213: 7282626298086112144
+    second: SADASWDSADWAD_23
+  - first:
+      213: -8372714214295496163
+    second: SADASWDSADWAD_24
+  - first:
+      213: 6844473676924128782
+    second: SADASWDSADWAD_25
+  - first:
+      213: -2245061245628503058
+    second: SADASWDSADWAD_26
+  - first:
+      213: -4664245403748563876
+    second: SADASWDSADWAD_27
+  - first:
+      213: -8946960587621036225
+    second: SADASWDSADWAD_28
+  - first:
+      213: 3221457597207128079
+    second: SADASWDSADWAD_29
+  - first:
+      213: -3015848734164106571
+    second: SADASWDSADWAD_30
+  - first:
+      213: -7607465699066297810
+    second: SADASWDSADWAD_31
+  - first:
+      213: 7672705325296106884
+    second: SADASWDSADWAD_32
+  - first:
+      213: -5657419917201880130
+    second: SADASWDSADWAD_33
+  - first:
+      213: -1889637407539985443
+    second: SADASWDSADWAD_34
+  - first:
+      213: 8064638955873855066
+    second: SADASWDSADWAD_35
+  - first:
+      213: 4889025500355797717
+    second: SADASWDSADWAD_36
+  - first:
+      213: -3297897572584848880
+    second: SADASWDSADWAD_37
+  - first:
+      213: -8082119448818714413
+    second: SADASWDSADWAD_38
+  - first:
+      213: -894617017471537193
+    second: SADASWDSADWAD_39
+  - first:
+      213: -2173435065639445581
+    second: SADASWDSADWAD_40
+  - first:
+      213: -9130813643742954103
+    second: SADASWDSADWAD_41
+  - first:
+      213: 6873210569456630523
+    second: SADASWDSADWAD_42
+  - first:
+      213: -7949891829662547220
+    second: SADASWDSADWAD_43
+  - first:
+      213: -569444547387362353
+    second: SADASWDSADWAD_44
+  - first:
+      213: -2068764381781201210
+    second: SADASWDSADWAD_45
+  - first:
+      213: 5851136707914360684
+    second: SADASWDSADWAD_46
+  - first:
+      213: -4803689583473014764
+    second: SADASWDSADWAD_47
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 1
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: SADASWDSADWAD_0
+      rect:
+        serializedVersion: 2
+        x: 26
+        y: 0
+        width: 117
+        height: 189
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a18176f9f008eb480800000000000000
+      internalID: -8881520610540840934
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SADASWDSADWAD_1
+      rect:
+        serializedVersion: 2
+        x: 227
+        y: 135
+        width: 54
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4e2bf811c2f724d50800000000000000
+      internalID: 6720073421240120036
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SADASWDSADWAD_2
+      rect:
+        serializedVersion: 2
+        x: 267
+        y: 178
+        width: 51
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d8d730763f65b9d80800000000000000
+      internalID: -8242899089566237299
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SADASWDSADWAD_3
+      rect:
+        serializedVersion: 2
+        x: 313
+        y: 178
+        width: 10
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 49e4a66ab902159a0800000000000000
+      internalID: -6246175355302162796
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SADASWDSADWAD_4
+      rect:
+        serializedVersion: 2
+        x: 322
+        y: 178
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d91f417d507a28050800000000000000
+      internalID: 5801382913531769245
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SADASWDSADWAD_5
+      rect:
+        serializedVersion: 2
+        x: 330
+        y: 176
+        width: 13
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 37daa85322f7ff7b0800000000000000
+      internalID: -5188288460803625613
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SADASWDSADWAD_6
+      rect:
+        serializedVersion: 2
+        x: 349
+        y: 178
+        width: 75
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fb67cb230a99a0b40800000000000000
+      internalID: 5407303215936730815
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SADASWDSADWAD_7
+      rect:
+        serializedVersion: 2
+        x: 431
+        y: 178
+        width: 32
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e9b8677b41f692700800000000000000
+      internalID: 516065767078661022
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SADASWDSADWAD_8
+      rect:
+        serializedVersion: 2
+        x: 469
+        y: 178
+        width: 71
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 12196496b1448de60800000000000000
+      internalID: 7987208823662612769
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SADASWDSADWAD_9
+      rect:
+        serializedVersion: 2
+        x: 546
+        y: 178
+        width: 68
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e2b9daa4b50ae1050800000000000000
+      internalID: 5773228086290914094
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SADASWDSADWAD_10
+      rect:
+        serializedVersion: 2
+        x: 619
+        y: 178
+        width: 53
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2485ef3c006a970e0800000000000000
+      internalID: -2271602014813267902
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SADASWDSADWAD_11
+      rect:
+        serializedVersion: 2
+        x: 676
+        y: 178
+        width: 68
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1b3e1463d79a84e20800000000000000
+      internalID: 3335101879314146225
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SADASWDSADWAD_12
+      rect:
+        serializedVersion: 2
+        x: 753
+        y: 178
+        width: 88
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fdc8369ea405d6de0800000000000000
+      internalID: -1338325231585751841
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SADASWDSADWAD_13
+      rect:
+        serializedVersion: 2
+        x: 793
+        y: 129
+        width: 172
+        height: 84
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2e898ce0983f671a0800000000000000
+      internalID: -6811989616367200030
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SADASWDSADWAD_14
+      rect:
+        serializedVersion: 2
+        x: 837
+        y: 180
+        width: 8
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4b398e084e42ef100800000000000000
+      internalID: 143592801956303796
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SADASWDSADWAD_15
+      rect:
+        serializedVersion: 2
+        x: 989
+        y: 91
+        width: 129
+        height: 132
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 595af7c1c9e9b3a70800000000000000
+      internalID: 8807807889583351189
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SADASWDSADWAD_16
+      rect:
+        serializedVersion: 2
+        x: 130
+        y: 91
+        width: 69
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0b1532ff6491cad70800000000000000
+      internalID: 9055640743454134704
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SADASWDSADWAD_17
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 135
+        width: 99
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 011746b0f19eb7dd0800000000000000
+      internalID: -2487138049647677168
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SADASWDSADWAD_18
+      rect:
+        serializedVersion: 2
+        x: 391
+        y: 135
+        width: 50
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0e3d729df87206960800000000000000
+      internalID: 7593112470523728864
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SADASWDSADWAD_19
+      rect:
+        serializedVersion: 2
+        x: 446
+        y: 135
+        width: 102
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8af290e87193ffcb0800000000000000
+      internalID: -4828077502187884632
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SADASWDSADWAD_20
+      rect:
+        serializedVersion: 2
+        x: 562
+        y: 135
+        width: 52
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1dc5a9ac780a963e0800000000000000
+      internalID: -2059938849465148207
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SADASWDSADWAD_21
+      rect:
+        serializedVersion: 2
+        x: 620
+        y: 135
+        width: 65
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 410f89cf77d533620800000000000000
+      internalID: 2752646567173877780
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SADASWDSADWAD_22
+      rect:
+        serializedVersion: 2
+        x: 680
+        y: 135
+        width: 48
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a115790939ac5e520800000000000000
+      internalID: 2730811484204912922
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SADASWDSADWAD_23
+      rect:
+        serializedVersion: 2
+        x: 737
+        y: 135
+        width: 50
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 09b37597806111560800000000000000
+      internalID: 7282626298086112144
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SADASWDSADWAD_24
+      rect:
+        serializedVersion: 2
+        x: 876
+        y: 135
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d1a9d0b58c42ecb80800000000000000
+      internalID: -8372714214295496163
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SADASWDSADWAD_25
+      rect:
+        serializedVersion: 2
+        x: 95
+        y: 92
+        width: 34
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e0e039bab847cfe50800000000000000
+      internalID: 6844473676924128782
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SADASWDSADWAD_26
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 12
+        width: 124
+        height: 113
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: eeb215321b0f7d0e0800000000000000
+      internalID: -2245061245628503058
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SADASWDSADWAD_27
+      rect:
+        serializedVersion: 2
+        x: 297
+        y: 89
+        width: 52
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c54815c7485454fb0800000000000000
+      internalID: -4664245403748563876
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SADASWDSADWAD_28
+      rect:
+        serializedVersion: 2
+        x: 354
+        y: 91
+        width: 68
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f3f8d63afb206d380800000000000000
+      internalID: -8946960587621036225
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SADASWDSADWAD_29
+      rect:
+        serializedVersion: 2
+        x: 370
+        y: 48
+        width: 32
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f08a38cdd9ae4bc20800000000000000
+      internalID: 3221457597207128079
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SADASWDSADWAD_30
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 48
+        width: 68
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5b246df0e8d8526d0800000000000000
+      internalID: -3015848734164106571
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SADASWDSADWAD_31
+      rect:
+        serializedVersion: 2
+        x: 429
+        y: 91
+        width: 97
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e224f26b04adc6690800000000000000
+      internalID: -7607465699066297810
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SADASWDSADWAD_32
+      rect:
+        serializedVersion: 2
+        x: 469
+        y: 49
+        width: 93
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 48db58477dcea7a60800000000000000
+      internalID: 7672705325296106884
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SADASWDSADWAD_33
+      rect:
+        serializedVersion: 2
+        x: 525
+        y: 92
+        width: 13
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ebb46f14f8ecc71b0800000000000000
+      internalID: -5657419917201880130
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SADASWDSADWAD_34
+      rect:
+        serializedVersion: 2
+        x: 534
+        y: 91
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dd30a412ac8a6c5e0800000000000000
+      internalID: -1889637407539985443
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SADASWDSADWAD_35
+      rect:
+        serializedVersion: 2
+        x: 550
+        y: 91
+        width: 68
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a5663aee66a5bef60800000000000000
+      internalID: 8064638955873855066
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SADASWDSADWAD_36
+      rect:
+        serializedVersion: 2
+        x: 559
+        y: 48
+        width: 36
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5d2a8861ace49d340800000000000000
+      internalID: 4889025500355797717
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SADASWDSADWAD_37
+      rect:
+        serializedVersion: 2
+        x: 596
+        y: 21
+        width: 190
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 012057871a38b32d0800000000000000
+      internalID: -3297897572584848880
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SADASWDSADWAD_38
+      rect:
+        serializedVersion: 2
+        x: 624
+        y: 91
+        width: 68
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3d872e4ae2b86df80800000000000000
+      internalID: -8082119448818714413
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SADASWDSADWAD_39
+      rect:
+        serializedVersion: 2
+        x: 701
+        y: 92
+        width: 43
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7dfe69fff8ea593f0800000000000000
+      internalID: -894617017471537193
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SADASWDSADWAD_40
+      rect:
+        serializedVersion: 2
+        x: 737
+        y: 88
+        width: 119
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3bbde2ab25866d1e0800000000000000
+      internalID: -2173435065639445581
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SADASWDSADWAD_41
+      rect:
+        serializedVersion: 2
+        x: 859
+        y: 1
+        width: 179
+        height: 124
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 98d396e3e55d84180800000000000000
+      internalID: -9130813643742954103
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SADASWDSADWAD_42
+      rect:
+        serializedVersion: 2
+        x: 863
+        y: 63
+        width: 52
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bfa3cead89c826f50800000000000000
+      internalID: 6873210569456630523
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SADASWDSADWAD_43
+      rect:
+        serializedVersion: 2
+        x: 1077
+        y: 91
+        width: 9
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ce20f22508f4ca190800000000000000
+      internalID: -7949891829662547220
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SADASWDSADWAD_44
+      rect:
+        serializedVersion: 2
+        x: 401
+        y: 5
+        width: 33
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fc371b1833de818f0800000000000000
+      internalID: -569444547387362353
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SADASWDSADWAD_45
+      rect:
+        serializedVersion: 2
+        x: 432
+        y: 5
+        width: 68
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6ce63fb61c54a43e0800000000000000
+      internalID: -2068764381781201210
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SADASWDSADWAD_46
+      rect:
+        serializedVersion: 2
+        x: 501
+        y: 5
+        width: 66
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c67eb7fc5d9633150800000000000000
+      internalID: 5851136707914360684
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SADASWDSADWAD_47
+      rect:
+        serializedVersion: 2
+        x: 571
+        y: 3
+        width: 139
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 418c8dd56cdd55db0800000000000000
+      internalID: -4803689583473014764
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      SADASWDSADWAD_0: -8881520610540840934
+      SADASWDSADWAD_1: 6720073421240120036
+      SADASWDSADWAD_10: -2271602014813267902
+      SADASWDSADWAD_11: 3335101879314146225
+      SADASWDSADWAD_12: -1338325231585751841
+      SADASWDSADWAD_13: -6811989616367200030
+      SADASWDSADWAD_14: 143592801956303796
+      SADASWDSADWAD_15: 8807807889583351189
+      SADASWDSADWAD_16: 9055640743454134704
+      SADASWDSADWAD_17: -2487138049647677168
+      SADASWDSADWAD_18: 7593112470523728864
+      SADASWDSADWAD_19: -4828077502187884632
+      SADASWDSADWAD_2: -8242899089566237299
+      SADASWDSADWAD_20: -2059938849465148207
+      SADASWDSADWAD_21: 2752646567173877780
+      SADASWDSADWAD_22: 2730811484204912922
+      SADASWDSADWAD_23: 7282626298086112144
+      SADASWDSADWAD_24: -8372714214295496163
+      SADASWDSADWAD_25: 6844473676924128782
+      SADASWDSADWAD_26: -2245061245628503058
+      SADASWDSADWAD_27: -4664245403748563876
+      SADASWDSADWAD_28: -8946960587621036225
+      SADASWDSADWAD_29: 3221457597207128079
+      SADASWDSADWAD_3: -6246175355302162796
+      SADASWDSADWAD_30: -3015848734164106571
+      SADASWDSADWAD_31: -7607465699066297810
+      SADASWDSADWAD_32: 7672705325296106884
+      SADASWDSADWAD_33: -5657419917201880130
+      SADASWDSADWAD_34: -1889637407539985443
+      SADASWDSADWAD_35: 8064638955873855066
+      SADASWDSADWAD_36: 4889025500355797717
+      SADASWDSADWAD_37: -3297897572584848880
+      SADASWDSADWAD_38: -8082119448818714413
+      SADASWDSADWAD_39: -894617017471537193
+      SADASWDSADWAD_4: 5801382913531769245
+      SADASWDSADWAD_40: -2173435065639445581
+      SADASWDSADWAD_41: -9130813643742954103
+      SADASWDSADWAD_42: 6873210569456630523
+      SADASWDSADWAD_43: -7949891829662547220
+      SADASWDSADWAD_44: -569444547387362353
+      SADASWDSADWAD_45: -2068764381781201210
+      SADASWDSADWAD_46: 5851136707914360684
+      SADASWDSADWAD_47: -4803689583473014764
+      SADASWDSADWAD_5: -5188288460803625613
+      SADASWDSADWAD_6: 5407303215936730815
+      SADASWDSADWAD_7: 516065767078661022
+      SADASWDSADWAD_8: 7987208823662612769
+      SADASWDSADWAD_9: 5773228086290914094
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

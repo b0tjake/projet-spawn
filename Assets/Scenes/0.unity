@@ -1843,7 +1843,7 @@ Transform:
   m_GameObject: {fileID: 207040372}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 142.24, y: -6.34, z: 0}
+  m_LocalPosition: {x: 158.3, y: -1.8, z: 0}
   m_LocalScale: {x: 2.6515267, y: 2.6544821, z: 2.4626422}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -36695,7 +36695,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1857742904}
-  - component: {fileID: 1857742903}
   - component: {fileID: 1857742902}
   m_Layer: 0
   m_Name: MusicManager
@@ -36801,18 +36800,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &1857742903
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1857742901}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 237831cb937bdae48afe4c26c53c2479, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::AudioManager
 --- !u!4 &1857742904
 Transform:
   m_ObjectHideFlags: 0
